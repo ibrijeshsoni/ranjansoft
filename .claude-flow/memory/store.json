@@ -1,0 +1,14 @@
+{
+  "entries": {
+    "cmd-1790847558479": {
+      "key": "cmd-1790847558479",
+      "value": "{\"command\":\"git status --short && echo \\\"--- .gitignore\\\" && cat .gitignore && echo \\\"--- remotes\\\" && git remote -v && git ls-remote origin 2>&1 | head\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-01T09:39:18.479Z",
+      "lastAccessed": "2026-10-01T09:39:18.479Z",
+      "accessCount": 0,
+      "expiresAt": "2026-10-31T09:39:18.479Z"
+    }
+  },
+  "version": "3.0.0"
+}

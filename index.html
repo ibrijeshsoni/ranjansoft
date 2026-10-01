@@ -1,0 +1,2190 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ranjan Soft— IT Strategy & Digital Transformation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* =========================================
+       DESIGN TOKENS — DARK (DEFAULT) + LIGHT
+    ========================================= */
+    /* :root {
+      --bg-base:         #06091A;
+      --bg-surface:      #0C1228;
+      --bg-card:         #101830;
+      --bg-card-hover:   #162040;
+      --border:          rgba(255,255,255,0.06);
+      --border-accent:   rgba(56,189,248,0.35);
+
+      --text-primary:    #EEF2FF;
+      --text-secondary:  #7E9BB5;
+      --text-muted:      #3D5166;
+
+      --cyan:            #38BDF8;
+      --cyan-dim:        rgba(56,189,248,0.12);
+      --cyan-glow:       rgba(56,189,248,0.25);
+      --amber:           #FBBF24;
+      --amber-dim:       rgba(251,191,36,0.12);
+
+      --status-current:  #F97316;
+      --status-curr-bg:  rgba(249,115,22,0.14);
+      --status-curr-bdr: rgba(249,115,22,0.28);
+      --status-done:     #22C55E;
+      --status-done-bg:  rgba(34,197,94,0.14);
+      --status-done-bdr: rgba(34,197,94,0.28);
+
+      --nav-bg:          rgba(6,9,26,0.88);
+      --shadow:          0 8px 32px rgba(0,0,0,0.45);
+      --shadow-sm:       0 2px 12px rgba(0,0,0,0.3);
+
+      --grad-hero:       radial-gradient(ellipse 90% 55% at 50% -5%, rgba(56,189,248,0.10) 0%, transparent 70%);
+      --grad-line:       linear-gradient(90deg, var(--cyan), var(--amber));
+      --grad-vert:       linear-gradient(180deg, var(--cyan) 0%, transparent 100%);
+    }
+
+    [data-theme="light"] {
+      --bg-base:         #F0F5FF;
+      --bg-surface:      #FFFFFF;
+      --bg-card:         #FFFFFF;
+      --bg-card-hover:   #F5F8FF;
+      --border:          rgba(11,28,64,0.08);
+      --border-accent:   rgba(2,132,199,0.35);
+
+      --text-primary:    #0B1C40;
+      --text-secondary:  #4A6380;
+      --text-muted:      #94A3B8;
+
+      --cyan:            #0284C7;
+      --cyan-dim:        rgba(2,132,199,0.09);
+      --cyan-glow:       rgba(2,132,199,0.18);
+      --amber:           #D97706;
+      --amber-dim:       rgba(217,119,6,0.10);
+
+      --status-current:  #EA580C;
+      --status-curr-bg:  rgba(234,88,12,0.10);
+      --status-curr-bdr: rgba(234,88,12,0.22);
+      --status-done:     #16A34A;
+      --status-done-bg:  rgba(22,163,74,0.10);
+      --status-done-bdr: rgba(22,163,74,0.22);
+
+      --nav-bg:          rgba(240,245,255,0.90);
+      --shadow:          0 8px 32px rgba(11,28,64,0.10);
+      --shadow-sm:       0 2px 12px rgba(11,28,64,0.07);
+
+      --grad-hero:       radial-gradient(ellipse 90% 55% at 50% -5%, rgba(2,132,199,0.07) 0%, transparent 70%);
+    } */
+:root {
+      --bg-base:         #07061A;
+      --bg-surface:      #0E0C2A;
+      --bg-card:         #141030;
+      --bg-card-hover:   #1A1540;
+      --border:          rgba(255,255,255,0.06);
+      --border-accent:   rgba(124,58,237,0.38);
+
+      --text-primary:    #F0EDFF;
+      --text-secondary:  #8B82B0;
+      --text-muted:      #3D3660;
+
+      --cyan:            #7C3AED;
+      --cyan-dim:        rgba(124,58,237,0.13);
+      --cyan-glow:       rgba(124,58,237,0.28);
+      --amber:           #F97316;
+      --amber-dim:       rgba(249,115,22,0.12);
+
+      --status-current:  #F97316;
+      --status-curr-bg:  rgba(249,115,22,0.14);
+      --status-curr-bdr: rgba(249,115,22,0.28);
+      --status-done:     #22C55E;
+      --status-done-bg:  rgba(34,197,94,0.14);
+      --status-done-bdr: rgba(34,197,94,0.28);
+      --status-hold:     #6082B6;
+      --status-hold-bg:  rgba(96,130,182,0.14);
+      --status-hold-bdr: rgba(96,130,182,0.28);
+
+      --nav-bg:          rgba(7,6,26,0.88);
+      --shadow:          0 10px 40px rgba(0,0,0,0.55);
+      --shadow-sm:       0 2px 12px rgba(0,0,0,0.3);
+
+      --grad-hero:       radial-gradient(ellipse 90% 55% at 50% -5%, rgba(124,58,237,0.10) 0%, transparent 70%);
+      --grad-line:       linear-gradient(90deg, var(--cyan), var(--amber));
+      --grad-vert:       linear-gradient(180deg, var(--cyan) 0%, transparent 100%);
+    }
+
+    [data-theme="light"] {
+      --bg-base:         #F5F3FF;
+      --bg-surface:      #FFFFFF;
+      --bg-card:         #FFFFFF;
+      --bg-card-hover:   #F0EBFF;
+      --border:          rgba(60,30,120,0.08);
+      --border-accent:   rgba(109,40,217,0.32);
+
+      --text-primary:    #1A0A3D;
+      --text-secondary:  #5B4A7A;
+      --text-muted:      #A090BE;
+
+      --cyan:            #6D28D9;
+      --cyan-dim:        rgba(109,40,217,0.09);
+      --cyan-glow:       rgba(109,40,217,0.18);
+      --amber:           #EA6C00;
+      --amber-dim:       rgba(234,108,0,0.10);
+
+      --status-current:  #EA6C00;
+      --status-curr-bg:  rgba(234,108,0,0.10);
+      --status-curr-bdr: rgba(234,108,0,0.22);
+      --status-done:     #16A34A;
+      --status-done-bg:  rgba(22,163,74,0.10);
+      --status-done-bdr: rgba(22,163,74,0.22);
+      --status-hold:     #4B6B94;
+      --status-hold-bg:  rgba(75,107,148,0.10);
+      --status-hold-bdr: rgba(75,107,148,0.22);
+
+      --nav-bg:          rgba(245,243,255,0.90);
+      --shadow:          0 8px 32px rgba(26,10,61,0.10);
+      --shadow-sm:       0 2px 12px rgba(26,10,61,0.07);
+
+      --grad-hero:       radial-gradient(ellipse 90% 55% at 50% -5%, rgba(109,40,217,0.07) 0%, transparent 70%);
+    }
+    /* =========================================
+       RESET & BASE
+    ========================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg-base);
+      color: var(--text-primary);
+      line-height: 1.65;
+      overflow-x: hidden;
+      transition: background .3s, color .3s;
+    }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg-base); }
+    ::-webkit-scrollbar-thumb { background: var(--cyan); border-radius: 3px; }
+    a { text-decoration: none; color: inherit; }
+
+    /* =========================================
+       TYPOGRAPHY
+    ========================================= */
+    h1,h2,h3,h4 { font-family: 'Syne', sans-serif; line-height: 1.18; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    .tc  { color: var(--cyan); }
+    .ta  { color: var(--amber); }
+    .ts  { color: var(--text-secondary); }
+    .tm  { color: var(--text-muted); }
+
+    /* =========================================
+       LAYOUT
+    ========================================= */
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+    .section    { padding: 88px 0; position: relative; }
+    .divider    { height: 1px; background: var(--border); }
+
+    /* =========================================
+       PAGE ROUTING
+    ========================================= */
+    .page          { display: none; }
+    .page.active   { display: block; }
+
+    /* =========================================
+       NAVIGATION
+    ========================================= */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: var(--nav-bg);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: background .3s;
+    }
+    .nav-inner {
+      max-width: 1180px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 66px; padding: 0 24px;
+    }
+    .logo {
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.25rem;
+      letter-spacing: -.025em; display: flex; align-items: center; gap: 10px; cursor: pointer;
+    }
+    .logo-mark {
+      width: 30px; height: 30px; background: var(--cyan); border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .85rem; font-weight: 800; color: #fff; flex-shrink: 0;
+    }
+    .nav-links { display: flex; align-items: center; gap: 2px; list-style: none; }
+    .nav-links a {
+      padding: 7px 13px; border-radius: 7px; font-size: .875rem; font-weight: 500;
+      color: var(--text-secondary); cursor: pointer; transition: all .2s;
+    }
+    .nav-links a:hover { color: var(--text-primary); background: var(--cyan-dim); }
+    .nav-links a.active { color: var(--cyan); background: var(--cyan-dim); }
+    .nav-right { display: flex; align-items: center; gap: 10px; }
+    .theme-btn {
+      width: 38px; height: 38px; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--bg-card); color: var(--text-secondary); font-size: .95rem;
+      cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all .2s;
+    }
+    .theme-btn:hover { border-color: var(--cyan); color: var(--cyan); }
+    .btn-sm {
+      padding: 8px 18px; background: var(--cyan); color: #fff; border: none;
+      border-radius: 8px; font-family: 'Outfit', sans-serif; font-size: .85rem;
+      font-weight: 600; cursor: pointer; transition: all .2s;
+    }
+    .btn-sm:hover { opacity: .85; transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { width: 21px; height: 2px; background: var(--text-primary); border-radius: 1px; transition: all .3s; }
+    .mob-menu {
+      display: none; position: fixed; top: 66px; left: 0; right: 0; bottom: 0;
+      background: var(--bg-base); z-index: 199; padding: 28px 24px; flex-direction: column; gap: 8px;
+    }
+    .mob-menu.open { display: flex; }
+    .mob-menu a {
+      padding: 13px 16px; border-radius: 10px; font-size: 1.05rem; font-weight: 500;
+      color: var(--text-secondary); border: 1px solid var(--border); cursor: pointer; transition: all .2s;
+    }
+    .mob-menu a:hover, .mob-menu a.active {
+      color: var(--cyan); border-color: var(--border-accent); background: var(--cyan-dim);
+    }
+
+    /* =========================================
+       BUTTONS
+    ========================================= */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 26px; background: var(--cyan); color: #fff; border: none;
+      border-radius: 10px; font-family: 'Outfit', sans-serif; font-size: .975rem;
+      font-weight: 600; cursor: pointer; transition: all .25s;
+    }
+    .btn-primary:hover { opacity:.9; transform: translateY(-2px); box-shadow: 0 8px 24px var(--cyan-glow); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 26px; background: transparent; color: var(--text-primary);
+      border: 1px solid var(--border); border-radius: 10px; font-family: 'Outfit', sans-serif;
+      font-size: .975rem; font-weight: 500; cursor: pointer; transition: all .25s;
+    }
+    .btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); background: var(--cyan-dim); }
+
+    /* =========================================
+       SECTION LABEL
+    ========================================= */
+    .s-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'JetBrains Mono', monospace; font-size: .72rem; font-weight: 500;
+      color: var(--cyan); text-transform: uppercase; letter-spacing: .12em; margin-bottom: 14px;
+    }
+    .s-label::before { content: ''; width: 18px; height: 2px; background: var(--cyan); flex-shrink: 0; }
+    .s-title { font-size: clamp(1.9rem,4vw,2.8rem); font-weight: 700; letter-spacing: -.025em; margin-bottom: 14px; }
+    .s-desc  { font-size: 1rem; color: var(--text-secondary); max-width: 540px; line-height: 1.72; }
+
+    /* =========================================
+       PAGE HEADER BAND
+    ========================================= */
+    .ph {
+      padding: 118px 0 56px; background: var(--grad-hero);
+      border-bottom: 1px solid var(--border); position: relative; overflow: hidden;
+    }
+    .ph::after {
+      content: ''; position: absolute; inset: 0;
+      background-image: radial-gradient(circle, var(--text-muted) 1px, transparent 1px);
+      background-size: 36px 36px; opacity: .05; pointer-events: none;
+    }
+
+    /* =========================================
+       FADE-IN SCROLL ANIMATION
+    ========================================= */
+    .fi { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+    .fi.vis { opacity: 1; transform: translateY(0); }
+    .fi.d1 { transition-delay: .1s; }
+    .fi.d2 { transition-delay: .2s; }
+    .fi.d3 { transition-delay: .3s; }
+
+    /* =========================================
+       HOME — HERO
+    ========================================= */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center; padding-top: 66px;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg   { position: absolute; inset: 0; background: var(--grad-hero); pointer-events: none; }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 60px 60px; opacity: .5;
+    }
+    .hero-orb {
+      position: absolute; width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(56,189,248,.07) 0%, transparent 65%);
+      top: 50%; left: 50%; transform: translate(-50%,-52%); pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 780px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 5px 14px; background: var(--cyan-dim); border: 1px solid var(--border-accent);
+      border-radius: 100px; font-family: 'JetBrains Mono', monospace; font-size: .72rem;
+      color: var(--cyan); margin-bottom: 26px;
+      animation: fadeDown .6s ease both;
+    }
+    .pulse-dot {
+      width: 6px; height: 6px; background: var(--cyan); border-radius: 50%;
+      animation: pulseDot 2s infinite;
+    }
+    @keyframes pulseDot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.75)} }
+    .hero h1 {
+      font-size: clamp(2.6rem,6.5vw,5rem); font-weight: 800; letter-spacing: -.035em;
+      line-height: 1.07; margin-bottom: 22px;
+      animation: fadeUp .7s .1s ease both;
+    }
+    .hero-sub {
+      font-size: clamp(.95rem,2vw,1.15rem); color: var(--text-secondary); max-width: 520px;
+      line-height: 1.72; margin-bottom: 38px;
+      animation: fadeUp .7s .2s ease both;
+    }
+    .hero-actions {
+      display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+      animation: fadeUp .7s .3s ease both;
+    }
+    @keyframes fadeDown { from{opacity:0;transform:translateY(-10px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes fadeUp   { from{opacity:0;transform:translateY(14px)}  to{opacity:1;transform:translateY(0)} }
+
+    /* STATS BAR */
+    .stats-bar { background: var(--bg-surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); }
+    .stat-item {
+      padding: 28px 20px; text-align: center; border-right: 1px solid var(--border);
+      transition: background .2s;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-item:hover { background: var(--bg-card); }
+    .stat-num {
+      font-family: 'Syne', sans-serif; font-size: 2.2rem; font-weight: 800;
+      color: var(--cyan); letter-spacing: -.04em; line-height: 1; margin-bottom: 5px;
+    }
+    .stat-lbl { font-size: .82rem; color: var(--text-secondary); }
+
+    /* HOME SERVICES GRID */
+    .home-svc-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 52px;
+    }
+    .home-svc-card {
+      padding: 30px; background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 16px; cursor: pointer; transition: all .3s; position: relative; overflow: hidden;
+    }
+    .home-svc-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--grad-line); transform: scaleX(0); transform-origin: left; transition: transform .3s;
+    }
+    .home-svc-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--border-accent); }
+    .home-svc-card:hover::before { transform: scaleX(1); }
+    .svc-icon { width: 46px; height: 46px; background: var(--cyan-dim); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 18px; }
+    .home-svc-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 9px; }
+    .home-svc-card p  { font-size: .875rem; color: var(--text-secondary); line-height: 1.62; }
+
+    /* CTA BAND */
+    .cta-band {
+      padding: 76px 0; background: var(--bg-surface);
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    }
+    .cta-center { text-align: center; max-width: 620px; margin: 0 auto; }
+    .cta-center h2 { font-size: clamp(1.7rem,3.5vw,2.4rem); font-weight: 700; letter-spacing: -.025em; margin-bottom: 14px; }
+    .cta-center p  { color: var(--text-secondary); margin-bottom: 30px; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* =========================================
+       ABOUT PAGE
+    ========================================= */
+    .about-split {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;
+    }
+    .about-split h2 { font-size: clamp(1.7rem,3.5vw,2.6rem); font-weight: 700; letter-spacing: -.025em; margin-bottom: 20px; }
+    .about-split p  { color: var(--text-secondary); line-height: 1.76; margin-bottom: 14px; }
+    .about-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 38px; position: relative;
+    }
+    .about-card-top { position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--grad-line); border-radius: 20px 20px 0 0; }
+    .mini-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .mini-stat {
+      padding: 18px; background: var(--bg-surface); border-radius: 12px; border: 1px solid var(--border);
+    }
+    .mini-stat .n { font-family: 'Syne', sans-serif; font-size: 1.7rem; font-weight: 800; color: var(--cyan); letter-spacing: -.04em; line-height: 1; }
+    .mini-stat .l { font-size: .78rem; color: var(--text-secondary); margin-top: 2px; }
+    .mission-block {
+      margin-top: 22px; padding: 16px; background: var(--cyan-dim); border-radius: 10px;
+      border: 1px solid var(--border-accent); font-size: .88rem; color: var(--text-secondary); line-height: 1.65;
+    }
+    /* Values */
+    .values-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; margin-top: 44px; }
+    .val-card {
+      padding: 26px 22px; background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 14px; transition: all .22s;
+    }
+    .val-card:hover { border-color: var(--border-accent); transform: translateY(-2px); }
+    .val-icon { font-size: 1.7rem; margin-bottom: 11px; }
+    .val-card h4 { font-size: .97rem; font-weight: 700; margin-bottom: 7px; }
+    .val-card p  { font-size: .83rem; color: var(--text-secondary); line-height: 1.6; }
+    /* Timeline */
+    .timeline { margin-top: 44px; position: relative; }
+    .timeline::before {
+      content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px;
+      background: var(--grad-vert); transform: translateX(-50%);
+    }
+    .tl-item { display: grid; grid-template-columns: 1fr 44px 1fr; align-items: start; gap: 28px; margin-bottom: 36px; }
+    .tl-content {
+      padding: 18px 22px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 13px;
+    }
+    .tl-content.left  { text-align: right; }
+    .tl-content.right { grid-column: 3; }
+    .tl-dot {
+      grid-column: 2; width: 14px; height: 14px; background: var(--cyan);
+      border-radius: 50%; border: 3px solid var(--bg-base); margin: 4px auto 0; position: relative; z-index: 1;
+    }
+    .tl-year { font-family: 'JetBrains Mono', monospace; font-size: .75rem; color: var(--cyan); margin-bottom: 3px; }
+    .tl-content h4 { font-size: .93rem; font-weight: 700; margin-bottom: 3px; }
+    .tl-content p  { font-size: .8rem; color: var(--text-secondary); }
+
+    /* =========================================
+       SERVICES PAGE
+    ========================================= */
+    .overview-box {
+      background: var(--bg-surface); border: 1px solid var(--border); border-radius: 20px;
+      padding: 44px 48px; margin-bottom: 60px; position: relative; overflow: hidden;
+    }
+    .overview-box::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+      background: var(--grad-line);
+    }
+    .overview-box h2 { font-size: clamp(1.5rem,3vw,2rem); font-weight: 700; letter-spacing: -.025em; margin-bottom: 14px; }
+    .overview-box p  { color: var(--text-secondary); line-height: 1.76; max-width: 820px; margin-bottom: 10px; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .tag {
+      padding: 5px 13px; background: var(--cyan-dim); border: 1px solid var(--border-accent);
+      border-radius: 100px; font-size: .77rem; font-weight: 500; color: var(--cyan);
+    }
+    .svc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    
+    /* Hardware & Software Column Layout */
+    .services-two-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 40px;
+    }
+    .service-column {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .service-column:hover {
+      border-color: var(--border-accent);
+      box-shadow: var(--shadow);
+      transform: translateY(-4px);
+    }
+    .column-header {
+      padding: 30px;
+      background: linear-gradient(135deg, var(--bg-surface), var(--bg-card));
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .column-header h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0;
+    }
+    .column-header.hwc h3 {
+      color: var(--amber);
+    }
+    .column-header.swc h3 {
+      color: var(--cyan);
+    }
+    .column-icon {
+      font-size: 2rem;
+    }
+    .column-body {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      flex-grow: 1;
+    }
+    .service-sub-group {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-bottom: 20px;
+    }
+    .service-sub-group:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .service-sub-group h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .service-sub-group p {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+    .service-features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .service-feature-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.825rem;
+      color: var(--text-secondary);
+    }
+    .service-feature-item::before {
+      content: '✓';
+      color: var(--cyan);
+      font-size: 0.85rem;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .hwc-group .service-feature-item::before {
+      color: var(--amber);
+    }
+    .column-image-wrapper {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .column-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .service-column:hover .column-image-wrapper img {
+      transform: scale(1.05);
+    }
+    .svc-card {
+      padding: 34px 30px; background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 18px; transition: all .3s; position: relative; overflow: hidden;
+    }
+    .svc-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      background: var(--grad-line); transform: scaleX(0); transform-origin: left; transition: transform .3s;
+    }
+    .svc-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--border-accent); }
+    .svc-card:hover::after { transform: scaleX(1); }
+    .svc-card .svc-icon { margin-bottom: 22px; }
+    .svc-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+    .svc-card p  { font-size: .875rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 18px; }
+    .feat-list { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+    .feat-list li { display: flex; align-items: center; gap: 8px; font-size: .8rem; color: var(--text-secondary); }
+    .feat-list li::before { content: '→'; color: var(--cyan); font-size: .72rem; flex-shrink: 0; }
+    /* Process */
+    .process-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; margin-top: 44px; position: relative; }
+    .process-row::before {
+      content: ''; position: absolute; top: 30px; left: 12.5%; right: 12.5%; height: 2px;
+      background: var(--grad-line); z-index: 0;
+    }
+    .proc-step { text-align: center; padding: 0 18px; position: relative; z-index: 1; }
+    .proc-num {
+      width: 60px; height: 60px; background: var(--bg-surface); border: 2px solid var(--cyan);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--cyan);
+      margin: 0 auto 18px;
+    }
+    .proc-step h4 { font-size: .97rem; font-weight: 700; margin-bottom: 7px; }
+    .proc-step p  { font-size: .8rem; color: var(--text-secondary); line-height: 1.55; }
+    /* Tech grid */
+    .tech-grid { display: grid; grid-template-columns: repeat(6,1fr); gap: 14px; margin-top: 38px; }
+    .tech-item {
+      padding: 15px 10px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+      text-align: center; font-size: .78rem; color: var(--text-secondary); transition: all .2s; cursor: default;
+    }
+    .tech-item:hover { border-color: var(--border-accent); color: var(--cyan); background: var(--cyan-dim); }
+    .te { font-size: 1.35rem; display: block; margin-bottom: 5px; line-height:1; }
+    .te img { width: 32px; height: 32px; object-fit: contain; display: inline-block; filter: drop-shadow(0 1px 2px rgba(0,0,0,.15)); transition: transform .2s; }
+    .tech-item:hover .te img { transform: scale(1.15); }
+    .tech-category { margin-top: 36px; margin-bottom: 12px; }
+    .tech-category-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--cyan); background: var(--cyan-dim); border: 1px solid var(--border-accent);
+      padding: 4px 14px; border-radius: 999px;
+    }
+    /* ── Horizontal Tab Bar ──────────────────────────── */
+    .tech-tab-bar {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin: 24px 0 28px; padding: 14px 0 12px;
+      position: sticky; top: 62px; z-index: 20;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .tech-tab {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-secondary); background: var(--bg-card);
+      border: 1px solid var(--border); padding: 6px 14px; border-radius: 999px;
+      cursor: pointer; transition: all .18s; font-family: inherit; white-space: nowrap;
+      line-height: 1;
+    }
+    .tech-tab:hover { border-color: var(--border-accent); color: var(--cyan); background: var(--cyan-dim); }
+    .tech-tab.active { color: var(--cyan) !important; background: var(--cyan-dim) !important; border-color: var(--border-accent) !important; }
+    .domain-grid { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+    .domain-badge {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 18px; border-radius: 12px;
+      background: var(--bg-card); border: 1px solid var(--border);
+      font-size: .8rem; font-weight: 600; color: var(--text-secondary);
+      transition: all .2s; cursor: default;
+    }
+    .domain-badge:hover { border-color: var(--border-accent); color: var(--cyan); background: var(--cyan-dim); }
+    .domain-badge .db-icon { font-size: 1.1rem; }
+
+    /* =========================================
+       PROJECTS PAGE
+    ========================================= */
+    .filter-row { display: flex; gap: 8px; margin-bottom: 36px; flex-wrap: wrap; }
+    .f-tab {
+      padding: 7px 18px; border-radius: 100px; font-size: .85rem; font-weight: 500;
+      background: var(--bg-card); border: 1px solid var(--border); color: var(--text-secondary);
+      cursor: pointer; transition: all .2s; display: flex; align-items: center; gap: 7px;
+    }
+    .f-tab:hover { border-color: var(--border-accent); color: var(--text-primary); }
+    .f-tab.active { background: var(--cyan); border-color: var(--cyan); color: #fff; }
+    .f-cnt {
+      background: rgba(255,255,255,.18); padding: 1px 7px; border-radius: 100px; font-size: .72rem;
+    }
+    .f-tab:not(.active) .f-cnt { background: var(--bg-surface); color: var(--text-muted); }
+    .proj-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .proj-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px;
+      overflow: hidden; transition: all .3s;
+    }
+    .proj-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--border-accent); }
+    .proj-head {
+      padding: 26px 26px 18px; border-bottom: 1px solid var(--border);
+    }
+    .proj-status-row {
+      display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;
+    }
+    .st-badge {
+      display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px;
+      border-radius: 100px; font-size: .72rem; font-weight: 600;
+    }
+    .st-badge.curr { background: var(--status-curr-bg); color: var(--status-current); border: 1px solid var(--status-curr-bdr); }
+    .st-badge.hold { background: var(--status-hold-bg); color: var(--status-hold);    border: 1px solid var(--status-hold-bdr); }
+    .st-badge.done { background: var(--status-done-bg); color: var(--status-done);    border: 1px solid var(--status-done-bdr); }
+    .st-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .st-dot.curr { background: var(--status-current); animation: glowDot 2s infinite; }
+    .st-dot.hold { background: var(--status-hold); }
+    .st-dot.done { background: var(--status-done); }
+    @keyframes glowDot {
+      0%,100% { box-shadow: 0 0 0 3px var(--status-curr-bg); }
+      50%      { box-shadow: 0 0 0 5px rgba(249,115,22,.05); }
+    }
+    .proj-industry { font-family: 'JetBrains Mono', monospace; font-size: .69rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .07em; }
+    .proj-head h3 { font-size: 1rem; font-weight: 700; line-height: 1.35; }
+    .proj-body { padding: 18px 26px; }
+    .proj-body p { font-size: .855rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 14px; }
+    .tech-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tt {
+      padding: 3px 9px; background: var(--bg-surface); border: 1px solid var(--border);
+      border-radius: 5px; font-family: 'JetBrains Mono', monospace; font-size: .68rem; color: var(--text-muted);
+    }
+    .proj-foot {
+      padding: 14px 26px; border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .proj-meta { font-size: .78rem; color: var(--text-muted); }
+    .proj-link { font-size: .8rem; color: var(--cyan); font-weight: 500; display: flex; align-items: center; gap: 4px; transition: gap .2s; cursor: pointer; }
+    .proj-link:hover { gap: 8px; }
+
+    /* =========================================
+       CONTACT PAGE
+    ========================================= */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.55fr; gap: 60px; align-items: start; }
+    .ci-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 14px; }
+    .ci-desc  { color: var(--text-secondary); line-height: 1.7; margin-bottom: 30px; }
+    .ci-list  { display: flex; flex-direction: column; gap: 18px; }
+    .ci-row   { display: flex; align-items: center; gap: 14px; }
+    .ci-icon  { width: 42px; height: 42px; background: var(--cyan-dim); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .ci-lbl   { font-family: 'JetBrains Mono', monospace; font-size: .7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .07em; }
+    .ci-val   { font-size: .93rem; font-weight: 500; }
+    .contact-form {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 38px;
+    }
+    .fg { margin-bottom: 18px; }
+    .fg label { display: block; font-size: .84rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 7px; }
+    .fi-input, .fi-ta, .fi-sel {
+      width: 100%; padding: 11px 15px; background: var(--bg-surface); border: 1px solid var(--border);
+      border-radius: 9px; color: var(--text-primary); font-family: 'Outfit', sans-serif; font-size: .925rem;
+      outline: none; transition: border-color .2s;
+    }
+    .fi-input:focus, .fi-ta:focus, .fi-sel:focus { border-color: var(--cyan); }
+    .fi-input::placeholder, .fi-ta::placeholder { color: var(--text-muted); }
+    .fi-ta  { resize: vertical; min-height: 118px; }
+    .fi-sel option { background: var(--bg-card); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+    footer { background: var(--bg-surface); border-top: 1px solid var(--border); padding: 60px 0 28px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 44px; margin-bottom: 44px; }
+    .footer-brand p { font-size: .85rem; color: var(--text-secondary); line-height: 1.72; margin-top: 12px; max-width: 270px; }
+    .fc-title { font-family: 'JetBrains Mono', monospace; font-size: .72rem; font-weight: 500; text-transform: uppercase; letter-spacing: .09em; color: var(--text-muted); margin-bottom: 14px; }
+    .fc-list  { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .fc-list li a, .fc-list li span { font-size: .85rem; color: var(--text-secondary); cursor: pointer; transition: color .2s; }
+    .fc-list li a:hover { color: var(--cyan); }
+    .footer-bottom { padding-top: 28px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .footer-bottom p { font-size: .8rem; color: var(--text-muted); }
+    .soc-links { display: flex; gap: 8px; }
+    .soc-link {
+      width: 34px; height: 34px; background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 7px; display: flex; align-items: center; justify-content: center;
+      font-size: .82rem; color: var(--text-secondary); cursor: pointer; transition: all .2s;
+    }
+    .soc-link:hover { border-color: var(--cyan); color: var(--cyan); }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+    @media(max-width:1024px){
+      .home-svc-grid  { grid-template-columns: repeat(2,1fr); }
+      .svc-grid       { grid-template-columns: repeat(2,1fr); }
+      .proj-grid      { grid-template-columns: repeat(2,1fr); }
+      .values-grid    { grid-template-columns: repeat(2,1fr); }
+      .tech-grid      { grid-template-columns: repeat(4,1fr); }
+      .footer-grid    { grid-template-columns: 1fr 1fr; }
+      .about-split    { gap: 44px; }
+    }
+    @media(max-width:768px){
+      .services-two-columns { grid-template-columns: 1fr; gap: 24px; }
+      .section        { padding: 60px 0; }
+      .nav-links,.btn-sm { display: none; }
+      .hamburger      { display: flex; }
+      .hero h1        { font-size: 2.4rem; }
+      .stats-grid     { grid-template-columns: repeat(2,1fr); }
+      .stat-item:nth-child(2)  { border-right: none; }
+      .stat-item:nth-child(1),
+      .stat-item:nth-child(2)  { border-bottom: 1px solid var(--border); }
+      .home-svc-grid  { grid-template-columns: 1fr; }
+      .svc-grid       { grid-template-columns: 1fr; }
+      .proj-grid      { grid-template-columns: 1fr; }
+      .values-grid    { grid-template-columns: 1fr; }
+      .tech-grid      { grid-template-columns: repeat(3,1fr); }
+      .about-split    { grid-template-columns: 1fr; gap: 36px; }
+      .process-row    { grid-template-columns: repeat(2,1fr); }
+      .process-row::before { display: none; }
+      .contact-grid   { grid-template-columns: 1fr; }
+      .form-row       { grid-template-columns: 1fr; }
+      .footer-grid    { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom  { flex-direction: column; gap: 14px; text-align: center; }
+      .cta-btns       { flex-direction: column; align-items: center; }
+      .hero-actions   { flex-direction: column; align-items: flex-start; }
+      .timeline::before { left: 22px; }
+      .tl-item { grid-template-columns: 1fr; padding-left: 52px; }
+      .tl-item .tl-dot { display: none; }
+      .tl-content.left,.tl-content.right { grid-column: 1; text-align: left; }
+      .overview-box   { padding: 28px 24px; }
+    }
+    @media(max-width:480px){
+      .container      { padding: 0 16px; }
+      .hero h1        { font-size: 1.95rem; }
+      .tech-grid      { grid-template-columns: repeat(2,1fr); }
+      .mini-stats     { grid-template-columns: 1fr; }
+      .process-row    { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ==================== NAVIGATION ==================== -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo" onclick="goto('home')">
+      <div class="logo-mark">RS</div>
+      Ranjan Soft<span class="tc">.</span>
+    </div>
+    <ul class="nav-links">
+      <li><a data-page="home"     onclick="goto('home')">Home</a></li>
+      <li><a data-page="about"    onclick="goto('about')">About</a></li>
+      <li><a data-page="services" onclick="goto('services')">Services</a></li>
+      <li><a data-page="projects" onclick="goto('projects')">Projects</a></li>
+      <!-- <li><a data-page="contact"  onclick="goto('contact')">Contact</a></li> -->
+    </ul>
+    <div class="nav-right">
+      <button class="btn-sm" onclick="goto('contact')">Let's Talk</button>
+      <div class="hamburger" onclick="toggleMob()">
+        <span></span><span></span><span></span>
+      </div>
+      <button class="theme-btn" id="theme-btn" onclick="toggleTheme()">🌙</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mob-menu" id="mob-menu">
+  <a data-page="home"     onclick="goto('home');toggleMob()">Home</a>
+  <a data-page="about"    onclick="goto('about');toggleMob()">About</a>
+  <a data-page="services" onclick="goto('services');toggleMob()">Services</a>
+  <a data-page="projects" onclick="goto('projects');toggleMob()">Projects</a>
+  <!-- <a data-page="contact"  onclick="goto('contact');toggleMob()">Contact</a> -->
+</div>
+
+<!-- ==================== PAGE: HOME ==================== -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-orb"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          Currently accepting new client engagements
+        </div>
+        <h1>
+          IT Strategy &amp;<br>
+          <span class="tc">Digital Transformation</span><br>
+          You Can Rely On
+        </h1>
+        <p class="hero-sub">
+          We architect scalable cloud infrastructure, secure enterprise systems, and guide organizations through complex digital transformations — from first workshop to final handover.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="goto('services')">Explore Services &rarr;</button>
+          <button class="btn-ghost"   onclick="goto('projects')">View Our Work</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item"><div class="stat-num" data-cnt="50" data-sfx="+">0+</div><div class="stat-lbl">Projects Delivered</div></div>
+        <div class="stat-item"><div class="stat-num" data-cnt="30" data-sfx="+">0+</div><div class="stat-lbl">Enterprise Clients</div></div>
+        <div class="stat-item"><div class="stat-num" data-cnt="8"  data-sfx="+">0+</div><div class="stat-lbl">Years of Experience</div></div>
+        <div class="stat-item"><div class="stat-num" data-cnt="98" data-sfx="%">0%</div><div class="stat-lbl">Client Satisfaction</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES TEASER -->
+  <section class="section">
+    <div class="container">
+      <div class="fi">
+        <div class="s-label">What We Do</div>
+        <h2 class="s-title">End-to-End IT <span class="tc">Consultancy</span></h2>
+        <p class="s-desc">From cloud architecture to intelligent automation, we deliver technology consulting that drives measurable business outcomes.</p>
+      </div>
+      <div class="home-svc-grid fi d1">
+        <div class="home-svc-card" onclick="goto('services')">
+          <div class="svc-icon">☁️</div>
+          <h3>Cloud Architecture</h3>
+          <p>Design and migrate to cost-optimised, resilient cloud environments on AWS, Azure and GCP.</p>
+        </div>
+        <div class="home-svc-card" onclick="goto('services')">
+          <div class="svc-icon">🔒</div>
+          <h3>Cybersecurity</h3>
+          <p>Comprehensive security audits, threat modelling, and zero-trust architecture implementation.</p>
+        </div>
+        <div class="home-svc-card" onclick="goto('services')">
+          <div class="svc-icon">⚙️</div>
+          <h3>DevOps &amp; Platform Eng.</h3>
+          <p>CI/CD pipelines, Kubernetes orchestration, and internal developer platforms your team will love.</p>
+        </div>
+        <div class="home-svc-card" onclick="goto('services')">
+          <div class="svc-icon">🏗️</div>
+          <h3>System Architecture</h3>
+          <p>Microservices, event-driven design, and enterprise-grade architecture review and greenfield build.</p>
+        </div>
+        <div class="home-svc-card" onclick="goto('services')">
+          <div class="svc-icon">📊</div>
+          <h3>Data Engineering</h3>
+          <p>Real-time streaming pipelines, data lakehouses, and analytics platforms that make data work.</p>
+        </div>
+        <div class="home-svc-card" onclick="goto('services')">
+          <div class="svc-icon">🤖</div>
+          <h3>AI / ML Integration</h3>
+          <p>LLM adoption, RAG systems, and intelligent process automation grounded in real business value.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div class="container">
+      <div class="cta-center fi">
+        <div class="s-label" style="justify-content:center">Start the Conversation</div>
+        <h2>Ready to Transform Your<br><span class="tc">Technology Landscape?</span></h2>
+        <p>Whether you have a defined brief or just a challenge to solve — we'd love to hear from you.</p>
+        <div class="cta-btns">
+          <button class="btn-primary" onclick="goto('contact')">Schedule a Consultation &rarr;</button>
+          <button class="btn-ghost"   onclick="goto('about')">Learn About Us</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- /page-home -->
+
+<!-- ==================== PAGE: ABOUT ==================== -->
+<div class="page" id="page-about">
+
+  <div class="ph">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="s-label">Who We Are</div>
+      <h1 class="s-title" style="max-width:580px">Building Tomorrow's <span class="tc">Technology Infrastructure</span></h1>
+      <p class="s-desc">A team of seasoned IT consultants, architects, and engineers committed to driving meaningful digital change.</p>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="container">
+      <div class="about-split fi">
+        <div>
+          <div class="s-label">Our Story</div>
+          <h2>From Boutique Firm to <span class="tc">Enterprise Impact</span></h2>
+          <p>Founded in 2017, Ranjan Softbegan as a two-person IT advisory practice with a singular focus: helping organisations navigate the evolving technology landscape with clarity and confidence.</p>
+          <p>We have since grown into a specialist team serving clients across fintech, healthcare, manufacturing, logistics, and e-commerce — delivering everything from strategic roadmaps to hands-on infrastructure builds.</p>
+          <p>Our philosophy is simple: we don't just recommend solutions, we build alongside your team and transfer the knowledge that outlasts our engagement.</p>
+          <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+            <button class="btn-primary" onclick="goto('contact')">Work With Us &rarr;</button>
+            <button class="btn-ghost"   onclick="goto('projects')">Our Projects</button>
+          </div>
+        </div>
+        <div>
+          <div class="about-card">
+            <div class="about-card-top"></div>
+            <div style="margin-bottom:20px"><div class="s-label">At a Glance</div></div>
+            <div class="mini-stats">
+              <div class="mini-stat"><div class="n">2017</div><div class="l">Year Founded</div></div>
+              <div class="mini-stat"><div class="n">12+</div><div class="l">Team Members</div></div>
+              <div class="mini-stat"><div class="n">6</div><div class="l">Industries Served</div></div>
+              <div class="mini-stat"><div class="n">3</div><div class="l">Global Offices</div></div>
+            </div>
+            <div class="mission-block">
+              <div class="s-label" style="margin-bottom:6px">Mission</div>
+              <em>"To empower organisations with technology that is scalable, secure, and purposefully designed for their unique needs."</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- VALUES -->
+  <section class="section">
+    <div class="container">
+      <div class="fi">
+        <div class="s-label">Our Values</div>
+        <h2 class="s-title">Principles That <span class="tc">Guide Us</span></h2>
+      </div>
+      <div class="values-grid fi d1">
+        <div class="val-card">
+          <div class="val-icon">🎯</div>
+          <h4>Outcome-Driven</h4>
+          <p>Every engagement is measured against real business outcomes, not just technical deliverables.</p>
+        </div>
+        <div class="val-card">
+          <div class="val-icon">🔍</div>
+          <h4>Radical Transparency</h4>
+          <p>We communicate openly — including hard truths, trade-offs, and honest risk assessments.</p>
+        </div>
+        <div class="val-card">
+          <div class="val-icon">🤝</div>
+          <h4>Partnership First</h4>
+          <p>We embed with your team, not beside it. Knowledge transfer is central to every project.</p>
+        </div>
+        <div class="val-card">
+          <div class="val-icon">🛡️</div>
+          <h4>Security by Design</h4>
+          <p>Security is never an afterthought — it is architected into every solution from day one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- TIMELINE -->
+  <section class="section">
+    <div class="container">
+      <div class="fi">
+        <div class="s-label">Our Journey</div>
+        <h2 class="s-title">Key <span class="tc">Milestones</span></h2>
+      </div>
+      <div class="timeline fi d1">
+        <div class="tl-item">
+          <div class="tl-content left"><div class="tl-year">2017</div><h4>Company Founded</h4><p>Started as a 2-person IT advisory practice focused on cloud migrations.</p></div>
+          <div class="tl-dot"></div>
+          <div></div>
+        </div>
+        <div class="tl-item">
+          <div></div>
+          <div class="tl-dot"></div>
+          <div class="tl-content right"><div class="tl-year">2019</div><h4>First Enterprise Clients</h4><p>Secured landmark contracts in fintech and healthcare, establishing our sector expertise.</p></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-content left"><div class="tl-year">2021</div><h4>Team Expansion</h4><p>Grew to 12+ consultants spanning cloud, security, DevOps, and data engineering practices.</p></div>
+          <div class="tl-dot"></div>
+          <div></div>
+        </div>
+        <div class="tl-item">
+          <div></div>
+          <div class="tl-dot"></div>
+          <div class="tl-content right"><div class="tl-year">2023</div><h4>AI Practice Launched</h4><p>Dedicated AI/ML and LLM integration consulting practice opened to clients.</p></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-content left"><div class="tl-year">2025</div><h4>50+ Projects Milestone</h4><p>Surpassed 50 successful deliveries across 6 industry verticals worldwide.</p></div>
+          <div class="tl-dot"></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-about -->
+
+<!-- ==================== PAGE: SERVICES ==================== -->
+<div class="page" id="page-services">
+
+  <div class="ph">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="s-label">What We Offer</div>
+      <h1 class="s-title" style="max-width:640px">Comprehensive IT <span class="tc">Services &amp; Consultancy</span></h1>
+      <p class="s-desc">From infrastructure strategy to AI integration, every engagement is tailored to your business stage and scale.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- COMPANY OVERVIEW -->
+      <div class="overview-box fi">
+        <div class="s-label">Company Overview</div>
+        <h2>Ranjan Soft</h2>
+        <p>Ranjan Softis a full-spectrum IT and technology services firm specialising in enterprise digital transformation, cloud-native architecture, and security-first system design. We partner with organisations across fintech, healthcare, e-commerce, and manufacturing to architect, build, and operationalise technology that scales.</p>
+        <p>Our consultants bring hands-on expertise from both high-growth startups and large enterprise environments, ensuring every engagement combines strategic foresight with practical delivery. We believe technology is most powerful when it is purpose-built, resilient, and truly owned by the teams using it.</p>
+        <div class="tag-row">
+          <span class="tag">Cloud Architecture</span>
+          <span class="tag">DevOps Transformation</span>
+          <span class="tag">Cybersecurity</span>
+          <span class="tag">Data Engineering</span>
+          <span class="tag">AI / ML Integration</span>
+          <span class="tag">System Design</span>
+          <span class="tag">IT Strategy</span>
+          <span class="tag">Digital Transformation</span>
+        </div>
+      </div>
+
+      <!-- CORE SERVICES -->
+      <div class="fi" style="margin-bottom:32px">
+        <div class="s-label">Core Services</div>
+        <h2 class="s-title">Hardware &amp; <span class="tc">Software Services</span></h2>
+        <p class="s-desc">We offer end-to-end IT support, infrastructure solutions, and custom software engineering tailored to your operational needs.</p>
+      </div>
+
+      <div class="services-two-columns fi d1">
+        <!-- Hardware Service Column -->
+        <div class="service-column hwc-group">
+
+          <div class="column-header hwc">
+            <span class="column-icon">💻</span>
+            <h3>Hardware Service</h3>
+          </div>
+          <div class="column-body">
+            <div class="service-sub-group">
+              <h4>Laptop &amp; Desktop Services</h4>
+              <p>Comprehensive computer consulting, hardware replacements, upgrades, and onsite diagnostics.</p>
+              <div class="service-features-grid">
+                <div class="service-feature-item">RAM &amp; SSD Installation</div>
+                <div class="service-feature-item">Screen &amp; Battery Swap</div>
+                <div class="service-feature-item">Virus &amp; Windows Repair</div>
+                <div class="service-feature-item">Wi-Fi &amp; Network Setup</div>
+                <div class="service-feature-item">Hardware Diagnostics</div>
+                <div class="service-feature-item">Troubleshooting</div>
+              </div>
+            </div>
+
+            <div class="service-sub-group">
+              <h4>Computer AMC Contracts</h4>
+              <p>Annual Maintenance Contracts (AMC) designed for offices, businesses, and enterprise environments.</p>
+              <div class="service-features-grid">
+                <div class="service-feature-item">Quarterly Maintenance</div>
+                <div class="service-feature-item">Onsite Engineer Support</div>
+                <div class="service-feature-item">Instant Remote Help</div>
+                <div class="service-feature-item">Unlimited Service Calls</div>
+              </div>
+            </div>
+
+            <div class="service-sub-group">
+              <h4>IT Sales &amp; Infrastructure Solutions</h4>
+              <p>Deployment of enterprise hosting, server setups, and premium hardware procurement.</p>
+              <div class="service-features-grid">
+                <div class="service-feature-item">VPS Hosting Plans</div>
+                <div class="service-feature-item">Dedicated Cloud Servers</div>
+                <div class="service-feature-item">Printers &amp; Peripherals</div>
+                <div class="service-feature-item">UPS &amp; Power Solutions</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Software Service Column -->
+        <div class="service-column">
+
+          <div class="column-header swc">
+            <span class="column-icon">🚀</span>
+            <h3>Software Service</h3>
+          </div>
+          <div class="column-body">
+            <div class="service-sub-group">
+              <h4>Custom Software Development</h4>
+              <p>Designing, coding, and deploying production-grade digital platforms and integrations.</p>
+              <div class="service-features-grid">
+                <div class="service-feature-item">Web App Development</div>
+                <div class="service-feature-item">Android &amp; iOS Apps</div>
+                <div class="service-feature-item">API &amp; System Design</div>
+                <div class="service-feature-item">Database Architecture</div>
+                <div class="service-feature-item">Microservices Integration</div>
+                <div class="service-feature-item">Custom ERP/CRM Systems</div>
+              </div>
+            </div>
+
+            <div class="service-sub-group">
+              <h4>Premium Software Solutions</h4>
+              <p>Setup, licensing, and integration of industry-standard business and creative software suites.</p>
+              <div class="service-features-grid">
+                <div class="service-feature-item">Design: Adobe &amp; AutoCAD</div>
+                <div class="service-feature-item">Office 365 &amp; Acrobat</div>
+                <div class="service-feature-item">Accounting: Tally Prime</div>
+                <div class="service-feature-item">Security: Sophos &amp; Seqrite</div>
+              </div>
+            </div>
+
+            <div class="service-sub-group">
+              <h4>AI &amp; Cloud Transformations</h4>
+              <p>Guide your organization into the next generation of cloud-native and intelligent tools.</p>
+              <div class="service-features-grid">
+                <div class="service-feature-item">LLM &amp; RAG Integrations</div>
+                <div class="service-feature-item">Cloud Architecture (AWS)</div>
+                <div class="service-feature-item">Real-time Data Pipelines</div>
+                <div class="service-feature-item">Digital Transformation</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- PROCESS -->
+      <div style="margin-top:76px" class="fi">
+        <div class="s-label">How We Work</div>
+        <h2 class="s-title">Our <span class="tc">Engagement Process</span></h2>
+        <div class="process-row">
+          <div class="proc-step">
+            <div class="proc-num">01</div>
+            <h4>Discovery</h4>
+            <p>Deep-dive into your systems, business objectives, and technology gaps to build shared context.</p>
+          </div>
+          <div class="proc-step">
+            <div class="proc-num">02</div>
+            <h4>Roadmap</h4>
+            <p>Define a prioritised transformation roadmap with clear milestones, risks, and KPIs.</p>
+          </div>
+          <div class="proc-step">
+            <div class="proc-num">03</div>
+            <h4>Delivery</h4>
+            <p>Hands-on implementation with embedded consultants working alongside your team.</p>
+          </div>
+          <div class="proc-step">
+            <div class="proc-num">04</div>
+            <h4>Handover</h4>
+            <p>Full knowledge transfer, documentation, and post-engagement support and review.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TECH STACK -->
+      <div style="margin-top:76px" class="fi">
+        <div class="s-label">Technologies</div>
+        <h2 class="s-title">Our <span class="tc">Tech Stack</span></h2>
+
+        <div id="tech-panels-container">
+        <!-- ── Languages ────────────────────────────────── -->
+        <div class="tech-category fi">
+          <div class="tech-category-label">⌨️ &nbsp;Languages</div>
+        </div>
+        <div class="tech-grid">
+          <!-- Web / Scripting -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript"></span>JavaScript</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript"></span>TypeScript</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"></span>Python</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP"></span>PHP</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ruby/ruby-original.svg" alt="Ruby"></span>Ruby</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/perl/perl-original.svg" alt="Perl"></span>Perl</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5"></span>HTML5</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3"></span>CSS3</div>
+          <!-- Systems / Low-level -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C"></span>C</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++"></span>C++</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg" alt="Rust"></span>Rust</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg" alt="Go"></span>Go</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/objectivec/objectivec-plain.svg" alt="Objective-C"></span>Obj-C</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg" alt="Swift"></span>Swift</div>
+          <div class="tech-item"><span class="te">📋</span>Assembly</div>
+          <!-- JVM -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java"></span>Java</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg" alt="Kotlin"></span>Kotlin</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scala/scala-original.svg" alt="Scala"></span>Scala</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/groovy/groovy-original.svg" alt="Groovy"></span>Groovy</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/clojure/clojure-original.svg" alt="Clojure"></span>Clojure</div>
+          <!-- .NET / Microsoft -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="C#"></span>C#</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fsharp/fsharp-original.svg" alt="F#"></span>F#</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-original.svg" alt="VB.NET"></span>VB.NET</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/powershell/powershell-original.svg" alt="PowerShell"></span>PowerShell</div>
+          <!-- Functional -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/haskell/haskell-original.svg" alt="Haskell"></span>Haskell</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/elixir/elixir-original.svg" alt="Elixir"></span>Elixir</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/erlang/erlang-original.svg" alt="Erlang"></span>Erlang</div>
+          <!-- Data / Scientific -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" alt="R"></span>R</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/julia/julia-original.svg" alt="Julia"></span>Julia</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matlab/matlab-original.svg" alt="MATLAB"></span>MATLAB</div>
+          <!-- Shell / DevOps scripting -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="Bash"></span>Bash</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original.svg" alt="Lua"></span>Lua</div>
+          <!-- Mobile / Cross-platform -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" alt="Dart"></span>Dart</div>
+          <!-- Emerging / Web3 -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/solidity/solidity-original.svg" alt="Solidity"></span>Solidity</div>
+          <!-- Legacy / Enterprise -->
+          <div class="tech-item"><span class="te">📋</span>COBOL</div>
+          <div class="tech-item"><span class="te">📋</span>Fortran</div>
+          <div class="tech-item"><span class="te">📋</span>SQL</div>
+        </div>
+
+        <!-- ── Frontend ──────────────────────────────────── -->
+        <div class="tech-category fi">
+          <div class="tech-category-label">🖥️ &nbsp;Frontend</div>
+        </div>
+        <div class="tech-grid">
+          <!-- React ecosystem -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React"></span>React.js</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="Next.js"></span>Next.js</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/remix/000000" alt="Remix" style="filter:invert(1)"></span>Remix</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gatsby/gatsby-original.svg" alt="Gatsby"></span>Gatsby</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React Native"></span>React Native</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/expo/000000" alt="Expo" style="filter:invert(1)"></span>Expo</div>
+          <!-- Vue ecosystem -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" alt="Vue.js"></span>Vue.js</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nuxtjs/nuxtjs-original.svg" alt="Nuxt.js"></span>Nuxt.js</div>
+          <!-- Other frameworks -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-original.svg" alt="Angular"></span>Angular</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/svelte/svelte-original.svg" alt="Svelte"></span>Svelte</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg" alt="Astro"></span>Astro</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/electron/electron-original.svg" alt="Electron"></span>Electron</div>
+          <!-- Legacy / Utility -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-original.svg" alt="jQuery"></span>jQuery</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rails/rails-original-wordmark.svg" alt="Rails"></span>Ruby on Rails</div>
+          <!-- State management -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg" alt="Redux"></span>Redux</div>
+          <div class="tech-item"><span class="te">🏪</span>Zustand</div>
+          <!-- Build tools & CSS -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" alt="Vite"></span>Vite</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/webpack/webpack-original.svg" alt="Webpack"></span>Webpack</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS"></span>Tailwind CSS</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap"></span>Bootstrap</div>
+          <!-- CSS Preprocessors -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg" alt="Sass/SCSS"></span>Sass / SCSS</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/less/less-plain-wordmark.svg" alt="Less"></span>Less</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/postcss/DD3A0A" alt="PostCSS"></span>PostCSS</div>
+          <!-- CSS-in-JS -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/styledcomponents/DB7093" alt="Styled Components"></span>Styled Comp.</div>
+          <div class="tech-item"><span class="te">💅</span>Emotion</div>
+          <!-- UI Component Libraries -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/mui/007FFF" alt="Material UI"></span>Material UI</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/antdesign/0170FE" alt="Ant Design"></span>Ant Design</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/chakraui/319795" alt="Chakra UI"></span>Chakra UI</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/shadcnui/000000" alt="shadcn/ui" style="filter:invert(1)"></span>shadcn/ui</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bulma/bulma-plain.svg" alt="Bulma"></span>Bulma</div>
+        </div>
+
+        <!-- ── Backend / API ─────────────────────────────── -->
+        <div class="tech-category fi">
+          <div class="tech-category-label">⚙️ &nbsp;Backend &amp; API</div>
+        </div>
+        <div class="tech-grid">
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js"></span>Node.js</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg" alt="NestJS"></span>NestJS</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="Spring Boot"></span>Spring Boot</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/hibernate/hibernate-original.svg" alt="Hibernate"></span>Hibernate</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/anaconda/anaconda-original.svg" alt="Anaconda"></span>Anaconda</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/quarkus/quarkus-original.svg" alt="Quarkus"></span>Quarkus</div>
+          <div class="tech-item"><span class="te">📋</span>Micronaut</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain-wordmark.svg" alt="Django"></span>Django</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" alt="FastAPI"></span>FastAPI</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="JPA"></span>JPA</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/fastapi/009688" alt="REST API"></span>REST API</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/graphql/E10098" alt="GraphQL"></span>GraphQL</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xml/xml-original.svg" alt="SOAP API"></span>SOAP API</div>
+          <!-- More frameworks -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" alt="Express.js" style="filter:invert(1)"></span>Express.js</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg" alt="Flask" style="filter:invert(1)"></span>Flask</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel"></span>Laravel</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/socketdotio/ffffff" alt="Socket.io"></span>Socket.io</div>
+          <div class="tech-item"><span class="te">📋</span>gRPC</div>
+          <div class="tech-item"><span class="te">🔌</span>WebSocket</div>
+          <!-- API tools -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/swagger/85EA2D" alt="Swagger / OpenAPI"></span>Swagger</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/kong/003459" alt="Kong"></span>Kong GW</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/jsonwebtokens/000000" alt="JWT" style="filter:invert(1)"></span>JWT</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/trpc/2596BE" alt="tRPC"></span>tRPC</div>
+        </div>
+
+        <!-- ── Databases ──────────────────────────────────── -->
+        <div class="tech-category fi">
+          <div class="tech-category-label">🗄️ &nbsp;Databases</div>
+        </div>
+        <div class="tech-grid">
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"></span>PostgreSQL</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL"></span>MySQL</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg" alt="Oracle"></span>Oracle</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB"></span>MongoDB</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cassandra/cassandra-original.svg" alt="Cassandra"></span>Cassandra</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" alt="Redis"></span>Redis</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/rabbitmq/FF6600" alt="RabbitMQ"></span>RabbitMQ</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original.svg" alt="Kafka"></span>Kafka</div>
+        </div>
+
+        <!-- ── Big Data & Analytics ──────────────────────── -->
+        <div class="tech-category fi">
+          <div class="tech-category-label">🐘 &nbsp;Big Data &amp; Analytics</div>
+        </div>
+        <div class="tech-grid">
+          <!-- Apache Hadoop ecosystem -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/hadoop/hadoop-original.svg" alt="Hadoop"></span>Hadoop</div>
+          <div class="tech-item"><span class="te">🐝</span>Hive</div>
+          <div class="tech-item"><span class="te">🐷</span>Pig</div>
+          <div class="tech-item"><span class="te">🧮</span>Mahout</div>
+          <div class="tech-item"><span class="te">📦</span>HBase</div>
+          <div class="tech-item"><span class="te">⛈️</span>Storm</div>
+          <div class="tech-item"><span class="te">🔀</span>Sqoop</div>
+          <div class="tech-item"><span class="te">🦓</span>Zookeeper</div>
+          <div class="tech-item"><span class="te">⏱️</span>Oozie</div>
+          <div class="tech-item"><span class="te">🧵</span>YARN</div>
+          <!-- Stream processing (also in AI/ML but relevant here) -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachespark/apachespark-original-wordmark.svg" alt="Spark"></span>Spark</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/apacheflink/E6526F" alt="Flink"></span>Flink</div>
+          <!-- Analytics / Lakehouse -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/databricks/FF3621" alt="Databricks"></span>Databricks</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/snowflake/29B5E8" alt="Snowflake"></span>Snowflake</div>
+          <div class="tech-item"><span class="te">📋</span>dbt</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/trino/DD00A1" alt="Trino"></span>Trino</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/googlebigquery/669DF6" alt="BigQuery"></span>BigQuery</div>
+          <div class="tech-item"><span class="te">📋</span>Redshift</div>
+          <!-- Search & Observability (ELK) -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/elasticsearch/elasticsearch-original.svg" alt="Elasticsearch"></span>Elasticsearch</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kibana/kibana-original.svg" alt="Kibana"></span>Kibana</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/logstash/logstash-original.svg" alt="Logstash"></span>Logstash</div>
+        </div>
+
+        <!-- ── Cloud &amp; Infrastructure ─────────────────── -->
+        <div class="tech-category fi">
+          <div class="tech-category-label">☁️ &nbsp;Cloud &amp; Infrastructure</div>
+        </div>
+        <div class="tech-grid">
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS"></span>AWS</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Azure"></span>Azure</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg" alt="GCP"></span>GCP</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker"></span>Docker</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/podman/892CA0" alt="Podman"></span>Podman</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg" alt="Kubernetes"></span>Kubernetes</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" alt="Terraform"></span>Terraform</div>
+          <div class="tech-item"><span class="te">📋</span>OpenAI</div>
+        </div>
+
+        <!-- ── Observability & Monitoring ────────────────── -->
+        <div class="tech-category fi">
+          <div class="tech-category-label">📡 &nbsp;Observability &amp; Monitoring</div>
+        </div>
+        <div class="tech-grid">
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg" alt="Grafana"></span>Grafana</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/prometheus/E6522C" alt="Prometheus"></span>Prometheus</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/datadog/632CA6" alt="Datadog"></span>Datadog</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/grafana/F46800" alt="Loki"></span>Loki</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/opentelemetry/425CC7" alt="OpenTelemetry"></span>OpenTelemetry</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/jaeger/60D0E4" alt="Jaeger"></span>Jaeger</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/sentry/362D59" alt="Sentry"></span>Sentry</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/newrelic/1CE783" alt="New Relic"></span>New Relic</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/elasticsearch/elasticsearch-original.svg" alt="Elasticsearch"></span>Elasticsearch</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kibana/kibana-original.svg" alt="Kibana"></span>Kibana</div>
+        </div>
+
+        <!-- ── Project Management & Scrum ─────────────────── -->
+        <div class="tech-category fi">
+          <div class="tech-category-label">🗂️ &nbsp;Project Management &amp; Scrum</div>
+        </div>
+        <div class="tech-grid">
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/jira/0052CC" alt="Jira"></span>Jira</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/confluence/172B4D" alt="Confluence"></span>Confluence</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/trello/0052CC" alt="Trello"></span>Trello</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/notion/000000" alt="Notion" style="filter:invert(1)"></span>Notion</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/linear/5E6AD2" alt="Linear"></span>Linear</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/asana/F06A6A" alt="Asana"></span>Asana</div>
+          <div class="tech-item"><span class="te">📋</span>Slack</div>
+          <div class="tech-item"><span class="te">📋</span>MS Teams</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/miro/FFD02F" alt="Miro"></span>Miro</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/googlemeet/00897B" alt="Google Meet"></span>Google Meet</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/zoom/2D8CFF" alt="Zoom"></span>Zoom</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/clickup/7B68EE" alt="ClickUp"></span>ClickUp</div>
+        </div>
+
+        <!-- ── CI/CD & Automation ───────────────────────── -->
+        <div class="tech-category fi">
+          <div class="tech-category-label">⚙️ &nbsp;CI/CD &amp; Automation</div>
+        </div>
+        <div class="tech-grid">
+          <!-- Source Control -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git"></span>Git</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub"></span>GitHub</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" alt="GitLab"></span>GitLab</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/bitbucket/0052CC" alt="Bitbucket"></span>Bitbucket</div>
+          <!-- CI/CD Pipelines -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" alt="Jenkins"></span>Jenkins</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/githubactions/2088FF" alt="GitHub Actions"></span>GH Actions</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/gitlab/FC6D26" alt="GitLab CI"></span>GitLab CI</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/circleci/343434" alt="CircleCI" style="filter:invert(1)"></span>CircleCI</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/argo/EF7B4D" alt="ArgoCD"></span>ArgoCD</div>
+          <!-- Config & Process Management -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ansible/ansible-original.svg" alt="Ansible"></span>Ansible</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/pm2/2B037A" alt="PM2"></span>PM2</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/sonarqubecloud/F3702A" alt="SonarQube"></span>SonarQube</div>
+        </div>
+
+        <!-- ── AI / ML & Data Science ─────────────────────── -->
+        <div class="tech-category fi">
+          <div class="tech-category-label">🤖 &nbsp;AI / ML &amp; Data Science</div>
+        </div>
+        <div class="tech-grid">
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow"></span>TensorFlow</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="PyTorch"></span>PyTorch</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/keras/D00000" alt="Keras"></span>Keras</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/huggingface/FFD21E" alt="Hugging Face"></span>Hugging Face</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt="Scikit-learn"></span>Scikit-learn</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" alt="NumPy"></span>NumPy</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="Pandas"></span>Pandas</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/polars/CD792C" alt="Polars"></span>Polars</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/scipy/8CAAE6" alt="SciPy"></span>SciPy</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/plotly/3F4F75" alt="Matplotlib"></span>Matplotlib</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/opencv/5C3EE8" alt="OpenCV"></span>OpenCV</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/langchain/1C3C3C" alt="LangChain"></span>LangChain</div>
+          <div class="tech-item"><span class="te">📊</span>XGBoost</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/apacheairflow/017CEE" alt="Airflow"></span>Airflow</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachespark/apachespark-original-wordmark.svg" alt="Apache Spark"></span>Spark</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/apacheflink/E6526F" alt="Apache Flink"></span>Flink</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/mlflow/0194E2" alt="MLflow"></span>MLflow</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/weightsandbiases/FFBE00" alt="W&B"></span>W&amp;B</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/onnx/005CED" alt="ONNX"></span>ONNX</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/ray/028CF0" alt="Ray"></span>Ray</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/streamlit/FF4B4B" alt="Streamlit"></span>Streamlit</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/gradio/F97316" alt="Gradio"></span>Gradio</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/ollama/000000" alt="Ollama" style="filter:invert(1) drop-shadow(0 1px 2px rgba(0,0,0,.1))"></span>Ollama</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/plotly/3F4F75" alt="Plotly"></span>Plotly</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" alt="R"></span>R</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rstudio/rstudio-original.svg" alt="RStudio"></span>RStudio</div>
+        </div>
+
+        <!-- ── Agentic AI & LLM Stack ─────────────────────── -->
+        <div class="tech-category fi">
+          <div class="tech-category-label">🧠 &nbsp;Agentic AI &amp; LLM Stack</div>
+        </div>
+        <div class="tech-grid">
+          <!-- MCP -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/anthropic/D97757" alt="MCP"></span>MCP</div>
+          <!-- Agent Frameworks -->
+          <div class="tech-item"><span class="te">🤝</span>CrewAI</div>
+          <div class="tech-item"><span class="te">⚡</span>AutoGen</div>
+          <div class="tech-item"><span class="te">🔗</span>LangGraph</div>
+          <div class="tech-item"><span class="te">📓</span>Sem. Kernel</div>
+          <!-- Data / RAG Frameworks -->
+          <div class="tech-item"><span class="te">🦙</span>LlamaIndex</div>
+          <div class="tech-item"><span class="te">🔮</span>DSPy</div>
+          <!-- LLM Routing & Serving -->
+          <div class="tech-item"><span class="te">🔀</span>LiteLLM</div>
+          <div class="tech-item"><span class="te">⚙️</span>vLLM</div>
+          <!-- LLM Providers -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/anthropic/D97757" alt="Anthropic Claude"></span>Claude</div>
+          <div class="tech-item"><span class="te">📋</span>GPT-4o</div>
+          <div class="tech-item"><span class="te">🌌</span>Gemini</div>
+          <!-- Workflow Automation -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n"></span>n8n</div>
+          <div class="tech-item"><span class="te">🌊</span>Dify</div>
+          <!-- Observability -->
+          <div class="tech-item"><span class="te">🔭</span>LangSmith</div>
+          <div class="tech-item"><span class="te">📡</span>AgentOps</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/prometheus/E6522C" alt="Prometheus"></span>Prometheus</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg" alt="Grafana"></span>Grafana</div>
+        </div>
+
+        <!-- ── Vector Databases ───────────────────────────── -->
+        <div class="tech-category fi">
+          <div class="tech-category-label">🔍 &nbsp;Vector Databases</div>
+        </div>
+        <div class="tech-grid">
+          <div class="tech-item"><span class="te">🌲</span>Pinecone</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/milvus/00A1EA" alt="Milvus"></span>Milvus</div>
+          <div class="tech-item"><span class="te">📋</span>Weaviate</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/qdrant/DC244C" alt="Qdrant"></span>Qdrant</div>
+          <div class="tech-item"><span class="te">📓</span>ChromaDB</div>
+        </div>
+
+        <!-- ── Cybersecurity & AppSec ──────────────────────── -->
+        <div class="tech-category fi">
+          <div class="tech-category-label">🔐 &nbsp;Cybersecurity &amp; AppSec</div>
+        </div>
+        <div class="tech-grid">
+          <!-- Pen Testing & Scanning -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/kalilinux/557C94" alt="Kali Linux"></span>Kali Linux</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/metasploit/2596CD" alt="Metasploit"></span>Metasploit</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/burpsuite/FF6633" alt="Burp Suite"></span>Burp Suite</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/wireshark/1679A7" alt="Wireshark"></span>Wireshark</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/nmap/000000" alt="Nmap" style="filter:invert(1)"></span>Nmap</div>
+          <div class="tech-item"><span class="te"></span>OWASP ZAP</div>
+          <!-- SIEM & Threat -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/splunk/000000" alt="Splunk" style="filter:invert(1)"></span>Splunk</div>
+          <div class="tech-item"><span class="te">📋</span>CrowdStrike</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/snyk/4C4A73" alt="Snyk"></span>Snyk</div>
+          <!-- Secrets & Identity -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/vault/FFEC6E" alt="HashiCorp Vault"></span>Vault</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/keycloak/4D4D4D" alt="Keycloak" style="filter:invert(1)"></span>Keycloak</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/auth0/EB5424" alt="Auth0"></span>Auth0</div>
+          <!-- Network & CDN -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/cloudflare/F38020" alt="Cloudflare"></span>Cloudflare</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/letsencrypt/003A70" alt="Let's Encrypt"></span>Let's Encrypt</div>
+          <!-- Frameworks & Standards -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/owasp/000000" alt="OWASP" style="filter:invert(1)"></span>OWASP</div>
+          <div class="tech-item"><span class="te">🛡️</span>NIST</div>
+          <div class="tech-item"><span class="te">📋</span>ISO 27001</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/openssl/721412" alt="OpenSSL"></span>OpenSSL</div>
+        </div>
+
+        <!-- ── DevOps Tools ─────────────────────────────── -->
+        <div class="tech-category fi">
+          <div class="tech-category-label">🔧 &nbsp;DevOps Tools</div>
+        </div>
+        <div class="tech-grid">
+          <!-- Service Mesh & Proxy -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/helm/0F1689" alt="Helm"></span>Helm</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/istio/466BB0" alt="Istio"></span>Istio</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/linkerd/2BEDA7" alt="Linkerd"></span>Linkerd</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/envoyproxy/AC6199" alt="Envoy"></span>Envoy</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg" alt="Nginx"></span>Nginx</div>
+          <!-- Service Discovery & Config -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/consul/F24C53" alt="Consul"></span>Consul</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/nomad/00CA8E" alt="Nomad"></span>Nomad</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/vault/FFEC6E" alt="Vault"></span>Vault</div>
+          <!-- Config Management -->
+          <div class="tech-item"><span class="te">📋</span>Chef</div>
+          <div class="tech-item"><span class="te">📋</span>Puppet</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vagrant/vagrant-original.svg" alt="Vagrant"></span>Vagrant</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/packer/02A8EF" alt="Packer"></span>Packer</div>
+          <!-- GitOps -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/flux/5468FF" alt="FluxCD"></span>FluxCD</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/argo/EF7B4D" alt="ArgoCD"></span>ArgoCD</div>
+        </div>
+
+        <!-- ── MLOps ─────────────────────────────────────── -->
+        <div class="tech-category fi">
+          <div class="tech-category-label">🧬 &nbsp;MLOps</div>
+        </div>
+        <div class="tech-grid">
+          <div class="tech-item"><span class="te">☸️</span>Kubeflow</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/bentoml/FF6B35" alt="BentoML"></span>BentoML</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/dvc/13ADC7" alt="DVC"></span>DVC</div>
+          <div class="tech-item"><span class="te">🔬</span>ZenML</div>
+          <div class="tech-item"><span class="te">🍽️</span>Feast</div>
+          <div class="tech-item"><span class="te">📈</span>Evidently AI</div>
+          <div class="tech-item"><span class="te">🔁</span>TFX</div>
+          <div class="tech-item"><span class="te">🎯</span>Seldon Core</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/neptune/3D4FC4" alt="Neptune.ai"></span>Neptune.ai</div>
+          <div class="tech-item"><span class="te">✅</span>Great Expectations</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/mlflow/0194E2" alt="MLflow"></span>MLflow</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/weightsandbiases/FFBE00" alt="W&B"></span>W&amp;B</div>
+        </div>
+
+        <!-- ── AIOps ─────────────────────────────────────── -->
+        <div class="tech-category fi">
+          <div class="tech-category-label">🤖 &nbsp;AIOps</div>
+        </div>
+        <div class="tech-grid">
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/dynatrace/1496FF" alt="Dynatrace"></span>Dynatrace</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/pagerduty/06AC38" alt="PagerDuty"></span>PagerDuty</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/opsgenie/172B4D" alt="OpsGenie"></span>OpsGenie</div>
+          <div class="tech-item"><span class="te">📋</span>ServiceNow</div>
+          <div class="tech-item"><span class="te">🧩</span>Moogsoft</div>
+          <div class="tech-item"><span class="te">🔮</span>BigPanda</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/datadog/632CA6" alt="Datadog"></span>Datadog</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/newrelic/1CE783" alt="New Relic"></span>New Relic</div>
+        </div>
+
+        <!-- ── FinOps & DataOps ───────────────────────────── -->
+        <div class="tech-category fi">
+          <div class="tech-category-label">💰 &nbsp;FinOps &amp; DataOps</div>
+        </div>
+        <div class="tech-grid">
+          <div class="tech-item"><span class="te">☁️</span>CloudHealth</div>
+          <div class="tech-item"><span class="te">📋</span>Spot.io</div>
+          <div class="tech-item"><span class="te">📋</span>Cost Explorer</div>
+          <div class="tech-item"><span class="te">🗄️</span>DataHub</div>
+          <div class="tech-item"><span class="te">🔭</span>Atlan</div>
+          <div class="tech-item"><span class="te">📋</span>Apache Atlas</div>
+          <div class="tech-item"><span class="te">📋</span>GX (GE)</div>
+        </div>
+
+        <!-- ── Industry Domains ───────────────────────────── -->
+        <div class="tech-category fi">
+          <div class="tech-category-label">🏭 &nbsp;Industry Domains</div>
+        </div>
+        <div class="domain-grid fi">
+          <div class="domain-badge"><span class="db-icon">🏗️</span>ERP</div>
+          <div class="domain-badge"><span class="db-icon">🤝</span>CRM</div>
+          <div class="domain-badge"><span class="db-icon">🚚</span>SCM</div>
+          <div class="domain-badge"><span class="db-icon">🏭</span>Manufacturing</div>
+          <div class="domain-badge"><span class="db-icon">📡</span>IoT</div>
+          <div class="domain-badge"><span class="db-icon">🏦</span>BFSI</div>
+          <div class="domain-badge"><span class="db-icon">🏥</span>HealthTech</div>
+          <div class="domain-badge"><span class="db-icon">🛒</span>E-Commerce</div>
+          <div class="domain-badge"><span class="db-icon">📦</span>Logistics</div>
+          <div class="domain-badge"><span class="db-icon">⚡</span>FinTech</div>
+          <div class="domain-badge"><span class="db-icon">🎓</span>EdTech</div>
+          <div class="domain-badge"><span class="db-icon">🌾</span>AgriTech</div>
+        </div>
+
+
+        <!-- ── Open Source Platforms ─────────────────────── -->
+        <div class="tech-category fi">
+          <div class="tech-category-label">🔓 &nbsp;Open Source Platforms</div>
+        </div>
+        <div class="tech-grid">
+          <!-- ERP & Business -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/odoo/714B67" alt="Odoo"></span>Odoo</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/erpnext/004088" alt="ERPNext"></span>ERPNext</div>
+          <div class="tech-item"><span class="te">📋</span>Frappe</div>
+          <!-- CMS & Content -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/wordpress/21759B" alt="WordPress"></span>WordPress</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/ghost/000000" alt="Ghost" style="filter:invert(1)"></span>Ghost</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/strapi/2F2E8B" alt="Strapi"></span>Strapi</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/directus/607D8B" alt="Directus"></span>Directus</div>
+          <!-- BaaS & Database -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="Supabase"></span>Supabase</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/appwrite/FD366E" alt="Appwrite"></span>Appwrite</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/pocketbase/B8D2F2" alt="Pocketbase"></span>Pocketbase</div>
+          <!-- Data & Analytics -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/metabase/509EE3" alt="Metabase"></span>Metabase</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/airbyte/615EFF" alt="Airbyte"></span>Airbyte</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/plausibleanalytics/528BFF" alt="Plausible"></span>Plausible</div>
+          <!-- Communication & Collab -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/rocketchat/F5455C" alt="Rocket.Chat"></span>Rocket.Chat</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/mattermost/0058CC" alt="Mattermost"></span>Mattermost</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/zulip/2F2E8B" alt="Zulip"></span>Zulip</div>
+          <!-- Tools & DevOps -->
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/gitea/609926" alt="Gitea"></span>Gitea</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/penpot/000000" alt="Penpot" style="filter:invert(1)"></span>Penpot</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n"></span>n8n</div>
+          <div class="tech-item"><span class="te"><img src="https://cdn.simpleicons.org/jellyfin/00A4DC" alt="Jellyfin"></span>Jellyfin</div>
+        </div>
+
+        </div><!-- /tech-panels-container -->
+
+      </div>
+
+    </div>
+  </section>
+</div><!-- /page-services -->
+
+<!-- ==================== PAGE: PROJECTS ==================== -->
+<div class="page" id="page-projects">
+
+  <div class="ph">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="s-label">Portfolio</div>
+      <h1 class="s-title" style="max-width:580px">Our <span class="tc">Project Portfolio</span></h1>
+      <p class="s-desc">Selected engagements across industries — each delivering measurable impact through thoughtful technology.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- FILTER TABS -->
+      <div class="filter-row">
+        <button class="f-tab active" onclick="filterProj('all',this)">
+          All Projects <span class="f-cnt" id="cnt-all">7</span>
+        </button>
+        <button class="f-tab" onclick="filterProj('current',this)">
+          <span class="st-dot curr" style="width:8px;height:8px"></span>
+          In Progress <span class="f-cnt" id="cnt-curr">1</span>
+        </button>
+        <button class="f-tab" onclick="filterProj('hold',this)">
+          <span class="st-dot hold" style="width:8px;height:8px"></span>
+          On Hold <span class="f-cnt" id="cnt-hold">1</span>
+        </button>
+        <button class="f-tab" onclick="filterProj('delivered',this)">
+          <span class="st-dot done" style="width:8px;height:8px"></span>
+          Delivered <span class="f-cnt" id="cnt-done">5</span>
+        </button>
+      </div>
+
+      <!-- PROJECT CARDS -->
+      <div class="proj-grid" id="proj-grid">
+        <!-- P0 — Delivered: DriverOnHire -->
+        <div class="proj-card fi" data-status="current">
+          <div class="proj-head">
+            <div class="proj-status-row">
+              <span class="st-badge curr"><span class="st-dot curr"></span>In Progress</span>
+              <span class="proj-industry">Analytics / Platform</span>
+            </div>
+            <h3><a href="https://marketplus.ddsfam.uk/" target="_blank">Marketplus</a> — Stock Market Analysis Platform</h3>
+          </div>
+          <div class="proj-body">
+            <p>Full-featured web and mobile platform connecting vehicle owners with verified professional drivers on demand, featuring real-time booking, driver tracking, background verification, ratings, and automated payments.</p>
+            <div class="tech-tags">
+              <span class="tt">Python</span><span class="tt">Django</span><span class="tt">FastAPI</span><span class="tt">Payment Gateway</span>
+              <span class="tt">MySQL</span><span class="tt">Redis</span><span class="tt">Data Visualization</span>
+              <span class="tt">Stock APIs</span>
+            </div>
+          </div>
+          <div class="proj-foot">
+            <span class="proj-meta">Delivered: 2022 · Product</span>
+            <!-- <span class="proj-link">View Details →</span> -->
+          </div>
+        </div>
+
+        <!-- P0 — Delivered: DriverOnHire -->
+        <div class="proj-card fi" data-status="hold">
+          <div class="proj-head">
+            <div class="proj-status-row">
+              <span class="st-badge hold"><span class="st-dot hold"></span>On Hold</span>
+              <span class="proj-industry">IOT / Platform</span>
+            </div>
+            <h3><a href="#" target="_blank">Monitoring API</a> — Monitoring API Platform</h3>
+          </div>
+          <div class="proj-body">
+            <p>Created a secure and scalable IoT data orchestration platform enabling real time API driven communication, device integration, monitoring, and automated data processing between client infrastructure and orchestration services.</p>
+            <div class="tech-tags">
+              <span class="tt">Fatify</span><span class="tt">Node.js</span><span class="tt">MongoDB</span><span class="tt">MySQL</span>
+              <span class="tt">Redis</span><span class="tt">Rest API</span><span class="tt">Kafka</span><span class="tt">Data Orchestration</span>
+              <span class="tt">Real-time Monitoring</span>
+            </div>
+          </div>
+          <div class="proj-foot">
+            <span class="proj-meta">Delivered: 2022 · Product</span>
+            <!-- <span class="proj-link">View Details →</span> -->
+          </div>
+        </div>
+
+        <!-- P0 — Delivered: DriverOnHire -->
+        <div class="proj-card fi" data-status="delivered">
+          <div class="proj-head">
+            <div class="proj-status-row">
+              <span class="st-badge done"><span class="st-dot done"></span>Delivered</span>
+              <span class="proj-industry">IOT / Android / Platform</span>
+            </div>
+            <h3><a href="#" target="_blank">LED Light Implementation</a> — Jabra Meeting Device</h3>
+          </div>
+          <div class="proj-body">
+            <p>Jabra Meeting Device with LED Light Implementation, which need to Blink, Flash and Display based on the Google Meet, Zoom, and Teams based color combinations. Also display the Busy and Available statuses with LED.</p>
+            <div class="tech-tags">
+              <span class="tt">Android</span><span class="tt">Kotlin</span>
+              <span class="tt">JavaScript</span><span class="tt">React-Native</span>
+              <span class="tt">Real-time LED Lighting</span>
+            </div>
+          </div>
+          <div class="proj-foot">
+            <span class="proj-meta">Delivered: 2026 · Product</span>
+            <!-- <span class="proj-link">View Details →</span> -->
+          </div>
+        </div>
+        <!-- P1 — Delivered: DriverOnHire -->
+        <div class="proj-card fi" data-status="delivered">
+          <div class="proj-head">
+            <div class="proj-status-row">
+              <span class="st-badge done"><span class="st-dot done"></span>Delivered</span>
+              <span class="proj-industry">Transport / Platform</span>
+            </div>
+            <h3><a href="https://www.driveronhire.com/" target="_blank">DriverOnHire</a> — On-Demand Driver Platform</h3>
+          </div>
+          <div class="proj-body">
+            <p>Full-featured web and mobile platform connecting vehicle owners with verified professional drivers on demand, featuring real-time booking, driver tracking, background verification, ratings, and automated payments.</p>
+            <div class="tech-tags">
+              <span class="tt">Node.js</span><span class="tt">React</span><span class="tt">Mobile App</span><span class="tt">Payment Gateway</span><span class="tt">Maps API</span>
+            </div>
+          </div>
+          <div class="proj-foot">
+            <span class="proj-meta">Delivered: 2022 · Product</span>
+            <!-- <span class="proj-link">View Details →</span> -->
+          </div>
+        </div>
+
+        <!-- P3 — Delivered: FSSAI -->
+        <div class="proj-card fi d2" data-status="delivered">
+          <div class="proj-head">
+            <div class="proj-status-row">
+              <span class="st-badge done"><span class="st-dot done"></span>Delivered</span>
+              <span class="proj-industry">Food Regulation / GovTech</span>
+            </div>
+            <h3>FSSAI Food Regulatory — Label Binding System</h3>
+          </div>
+          <div class="proj-body">
+            <p>Digital system for binding FSSAI regulatory labels with food product data, streamlining compliance workflows for food manufacturers and enabling regulatory authorities to manage and track labelling obligations efficiently.</p>
+            <div class="tech-tags">
+              <span class="tt">Regulatory Tech</span><span class="tt">Web Portal</span><span class="tt">FSSAI</span><span class="tt">Compliance</span>
+            </div>
+          </div>
+          <div class="proj-foot">
+            <span class="proj-meta">Delivered · Client: FSSAI</span>
+            <!-- <span class="proj-link">View Details →</span> -->
+          </div>
+        </div>
+        
+        <div class="proj-card fi d1" data-status="delivered">
+          <div class="proj-head">
+            <div class="proj-status-row">
+              <span class="st-badge done"><span class="st-dot done"></span>Delivered</span>
+              <span class="proj-industry">E-Governance / Urban</span>
+            </div>
+            <h3>E-Governance Platform for Maharashtra Urban Local Bodies (ULBs)</h3>
+          </div>
+          <div class="proj-body">
+            <p>Integrated web-based e-governance solution for Maharashtra's Urban Local Bodies, covering property tax management, water billing, grievance redressal, and citizen self-service portals across multiple ULBs.</p>
+            <div class="tech-tags">
+              <span class="tt">E-Governance</span><span class="tt">Municipal ERP</span><span class="tt">Java EE</span><span class="tt">Oracle DB</span><span class="tt">Maharashtra</span>
+            </div>
+          </div>
+          <div class="proj-foot">
+            <span class="proj-meta">Delivered: 2017 · Client: Maharashtra ULBs</span>
+            <!-- <span class="proj-link">View Details →</span> -->
+          </div>
+        </div>
+
+        <div class="proj-card fi d1" data-status="delivered">
+          <div class="proj-head">
+            <div class="proj-status-row">
+              <span class="st-badge done"><span class="st-dot done"></span>Delivered</span>
+              <span class="proj-industry">E-Governance / Urban</span>
+            </div>
+            <h3>E-Governance Platform for German Citizen Data Management System</h3>
+          </div>
+          <div class="proj-body">
+            <p>Integrated web-based e-governance solution for Germany's Population Count, based on the Rural and Urban Planning frameworks.</p>
+            <div class="tech-tags">
+              <span class="tt">E-Governance</span><span class="tt">Android</span><span class="tt">Node.js</span><span class="tt">SQLite</span>
+              <span class="tt">Population Count</span>
+            </div>
+          </div>
+          <div class="proj-foot">
+            <span class="proj-meta">Delivered: 2010 · Client: Mandatos - Germany</span>
+            <!-- <span class="proj-link">View Details →</span> -->
+          </div>
+        </div>
+
+        <div class="proj-card fi d1" data-status="delivered">
+          <div class="proj-head">
+            <div class="proj-status-row">
+              <span class="st-badge done"><span class="st-dot done"></span>Delivered</span>
+              <span class="proj-industry">Shipment Tracking App</span>
+            </div>
+            <h3>Shipment Tracking App</h3>
+          </div>
+          <div class="proj-body">
+            <p>Developed an Android based logistics and shipment tracking application enabling import and export data management for international sea cargo transportation. The system provided real time shipment monitoring, movement tracking, and logistics visibility for stakeholders across multiple countries.</p>
+            <div class="tech-tags">
+              <span class="tt">Logistics</span>
+              <span class="tt">Tracking System</span>
+              <span class="tt">Android</span>
+              <span class="tt">Import/Export</span>
+              <span class="tt">Real Time Tracking</span>
+              <span class="tt">Marine Transportation</span>
+            </div>
+          </div>
+          <div class="proj-foot">
+            <span class="proj-meta">Delivered: 2011 · Client: </span>
+            <!-- <span class="proj-link">View Details →</span> -->
+          </div>
+        </div>
+      </div><!-- /proj-grid -->
+    </div>
+  </section>
+</div><!-- /page-projects -->
+
+<!-- ==================== PAGE: CONTACT ==================== -->
+<div class="page" id="page-contact">
+
+  <div class="ph">
+    <div class="container" style="position:relative;z-index:1">
+      <div class="s-label">Get in Touch</div>
+      <h1 class="s-title" style="max-width:600px">Let's Talk About Your <span class="tc">Next Project</span></h1>
+      <p class="s-desc">Whether you have a defined project brief or a technology challenge you're still figuring out — we'd love to hear from you.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid fi">
+
+        <!-- INFO -->
+        <div>
+          <p class="ci-title">How Can We Help?</p>
+          <p class="ci-desc">We typically respond within one business day. For urgent consulting needs, call us directly or book a slot using the form.</p>
+          <div class="ci-list">
+            <div class="ci-row">
+              <div class="ci-icon">📧</div>
+              <div><div class="ci-lbl">Email</div><div class="ci-val">hr.ranjansoft@gmail.com</div></div>
+            </div>
+            <div class="ci-row">
+              <div class="ci-icon">📞</div>
+              <div><div class="ci-lbl">Phone</div><div class="ci-val">+91 91378 05277</div></div>
+            </div>
+            <div class="ci-row">
+              <div class="ci-icon">📍</div>
+              <div><div class="ci-lbl">Headquarters</div><div class="ci-val">Mumbai, Maharashtra, India</div></div>
+            </div>
+            <div class="ci-row">
+              <div class="ci-icon">⏰</div>
+              <div><div class="ci-lbl">Availability</div><div class="ci-val">Mon–Fri, 9 AM – 9 PM IST</div></div>
+            </div>
+          </div>
+          <div style="margin-top:36px">
+            <div class="s-label" style="margin-bottom:14px">Connect With Us</div>
+            <div class="soc-links">
+              <div class="soc-link" title="LinkedIn">in</div>
+              <div class="soc-link" title="X / Twitter">𝕏</div>
+              <div class="soc-link" title="GitHub">⌥</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORM -->
+        <div class="contact-form">
+          <div class="s-label" style="margin-bottom:22px">Send a Message</div>
+          <div class="form-row">
+            <div class="fg"><label>First Name</label><input type="text" class="fi-input" placeholder="Rohan"></div>
+            <div class="fg"><label>Last Name</label><input type="text" class="fi-input" placeholder="Sharma"></div>
+          </div>
+          <div class="fg"><label>Work Email</label><input type="email" class="fi-input" placeholder="rohan@company.com"></div>
+          <div class="fg"><label>Company Name</label><input type="text" class="fi-input" placeholder="Your Company Pvt. Ltd."></div>
+          <div class="fg">
+            <label>Service of Interest</label>
+            <select class="fi-sel">
+              <option value="" disabled selected>Select a service...</option>
+              <option>Cloud Architecture &amp; Migration</option>
+              <option>Cybersecurity &amp; Compliance</option>
+              <option>DevOps &amp; Platform Engineering</option>
+              <option>System &amp; Application Architecture</option>
+              <option>Data Engineering &amp; Analytics</option>
+              <option>AI / ML &amp; Intelligent Automation</option>
+              <option>IT Strategy Consulting</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label>Tell us about your project</label>
+            <textarea class="fi-ta" placeholder="Describe your current challenges and what you're hoping to achieve..."></textarea>
+          </div>
+          <button class="btn-primary" style="width:100%;justify-content:center">Send Message &rarr;</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div><!-- /page-contact -->
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" style="margin-bottom:10px">
+          <div class="logo-mark">RS</div>
+          Ranjan Soft<span class="tc">.</span>
+        </div>
+        <p>A full-spectrum IT helping organisations architect, build, and operate technology that scales — securely and purposefully.</p>
+      </div>
+      <div>
+        <div class="fc-title" style="margin-left:100px">Company</div>
+        <ul class="fc-list" style="margin-left:100px">
+          <li><a onclick="goto('about')">About Us</a></li>
+          <li><a onclick="goto('services')">Services</a></li>
+          <li><a onclick="goto('projects')">Projects</a></li>
+          <!-- <li><a onclick="goto('contact')">Contact</a></li> -->
+        </ul>
+      </div>
+      <!--
+      <div>
+        <div class="fc-title">Services</div>
+        <ul class="fc-list">
+          <li><span>Cloud Architecture</span></li>
+          <li><span>Cybersecurity</span></li>
+          <li><span>DevOps</span></li>
+          <li><span>Data Engineering</span></li>
+          <li><span>AI Integration</span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="fc-title">Industries</div>
+        <ul class="fc-list">
+          <li><span>Fintech</span></li>
+          <li><span>Healthcare</span></li>
+          <li><span>Manufacturing</span></li>
+          <li><span>E-Commerce</span></li>
+          <li><span>Logistics</span></li>
+        </ul>
+      </div>
+      -->
+    </div>
+    <div class="footer-bottom" style="justify-content:center">
+      <p>© 2025 Ranjan Soft. All rights reserved.</p>
+      <!-- <div class="soc-links">
+        <div class="soc-link">in</div>
+        <div class="soc-link">𝕏</div>
+        <div class="soc-link">⌥</div>
+      </div> -->
+    </div>
+  </div>
+</footer>
+
+<!-- ==================== JAVASCRIPT ==================== -->
+<script>
+  /* ── THEME ─────────────────────────────── */
+  let theme = 'dark';
+  function toggleTheme(){
+    theme = theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+    document.getElementById('theme-btn').textContent = theme === 'dark' ? '🌙' : '☀️';
+  }
+
+  /* ── NAVIGATION ─────────────────────────── */
+  function goto(page){
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + page).classList.add('active');
+    document.querySelectorAll('[data-page]').forEach(a =>
+      a.classList.toggle('active', a.dataset.page === page));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(initFI, 80);
+  }
+
+  /* ── MOBILE MENU ────────────────────────── */
+  function toggleMob(){
+    document.getElementById('mob-menu').classList.toggle('open');
+  }
+
+  /* ── PROJECT FILTER ─────────────────────── */
+  function filterProj(status, btn){
+    document.querySelectorAll('.f-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.proj-card').forEach(c => {
+      c.style.display = (status === 'all' || c.dataset.status === status) ? '' : 'none';
+    });
+  }
+
+  /* ── FADE-IN (IntersectionObserver) ──────── */
+  function initFI(){
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('vis'); obs.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.page.active .fi:not(.vis)').forEach(el => obs.observe(el));
+  }
+
+  /* ── COUNTER ANIMATION ──────────────────── */
+  function animateCounters(){
+    document.querySelectorAll('[data-cnt]').forEach(el => {
+      const target = parseInt(el.dataset.cnt);
+      const sfx    = el.dataset.sfx || '';
+      let   cur    = 0;
+      const step   = target / 45;
+      const t = setInterval(() => {
+        cur += step;
+        if(cur >= target){ cur = target; clearInterval(t); }
+        el.textContent = Math.floor(cur) + sfx;
+      }, 28);
+    });
+  }
+
+  function updateProjCounts(){
+    const all = document.querySelectorAll('.proj-card').length;
+    const curr = document.querySelectorAll('.proj-card[data-status="current"]').length;
+    const hold = document.querySelectorAll('.proj-card[data-status="hold"]').length;
+    const done = document.querySelectorAll('.proj-card[data-status="delivered"]').length;
+    
+    const cntAll = document.getElementById('cnt-all');
+    const cntCurr = document.getElementById('cnt-curr');
+    const cntHold = document.getElementById('cnt-hold');
+    const cntDone = document.getElementById('cnt-done');
+    
+    if(cntAll) cntAll.textContent = all;
+    if(cntCurr) cntCurr.textContent = curr;
+    if(cntHold) cntHold.textContent = hold;
+    if(cntDone) cntDone.textContent = done;
+  }
+
+  /* ── INIT ───────────────────────────────── */
+  document.addEventListener('DOMContentLoaded', () => {
+    initFI();
+    animateCounters();
+    updateProjCounts();
+  });
+</script>
+<script>
+(function(){
+  var cont = document.getElementById('tech-panels-container');
+  if (!cont) return;
+  var cats = Array.from(cont.querySelectorAll('.tech-category'));
+  var bar = document.createElement('div');
+  bar.className = 'tech-tab-bar';
+  // Default active: index 2 = Backend & API
+  var defaultIdx = 2;
+  cats.forEach(function(cat, i){
+    var labelEl = cat.querySelector('.tech-category-label');
+    var grid = cat.nextElementSibling; // .tech-grid or .domain-grid
+    var btn = document.createElement('button');
+    btn.className = 'tech-tab' + (i === defaultIdx ? ' active' : '');
+    btn.innerHTML = labelEl ? labelEl.innerHTML : 'Tab '+(i+1);
+    btn.addEventListener('click', function(){
+      bar.querySelectorAll('.tech-tab').forEach(function(t){ t.classList.remove('active'); });
+      cats.forEach(function(c){
+        var g = c.nextElementSibling;
+        if (g) g.style.display = 'none';
+      });
+      btn.classList.add('active');
+      if (grid) grid.style.display = '';
+    });
+    bar.appendChild(btn);
+    cat.style.display = 'none';
+    if (i !== defaultIdx && grid) grid.style.display = 'none';
+  });
+  cont.insertBefore(bar, cont.firstChild);
+})();
+</script>
+</body>
+</html>
