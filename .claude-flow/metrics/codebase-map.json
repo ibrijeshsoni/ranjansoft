@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-10-03T08:28:23.600Z",
+  "projectRoot": "/home/brijesh-soni/Apps/ranjansoft",
+  "structure": {
+    "hasPackageJson": false,
+    "hasTsConfig": false,
+    "hasClaudeConfig": false,
+    "hasClaudeFlow": true
+  },
+  "scannedAt": 1791016103600
+}

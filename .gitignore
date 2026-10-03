@@ -3,3 +3,10 @@ certs/
 nginx/
 ./get-self-signed-certs.sh
 ./podman-compose.tml
+
+deployment-ducument.html
+deployment-ducument.pdf
+
+ruvector.db
+
+.swarm/

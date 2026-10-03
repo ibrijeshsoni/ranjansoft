@@ -6,3 +6,9 @@ bkup/
 123/
 *.py
 *.zip
+
+deployment-ducument.html
+deployment-ducument.pdf
+ruvector.db
+.claude-flow/
+.swarm/

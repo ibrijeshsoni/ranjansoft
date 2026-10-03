@@ -1,0 +1,58 @@
+[2026-10-03T07:43:23.525Z] [INFO] AI workers disabled (default) - all workers run local-only. Enable with `daemon start --headless`, daemon.aiWorkers.enabled=true, or RUFLO_DAEMON_AI_WORKERS=1 (#2661)
+[2026-10-03T07:43:23.526Z] [INFO] Scheduled map (interval: 900s, first run in 0s)
+[2026-10-03T07:43:23.526Z] [INFO] Scheduled audit (interval: 600s, first run in 120s)
+[2026-10-03T07:43:23.526Z] [INFO] Scheduled optimize (interval: 900s, first run in 240s)
+[2026-10-03T07:43:23.526Z] [INFO] Scheduled consolidate (interval: 1800s, first run in 360s)
+[2026-10-03T07:43:23.526Z] [INFO] Scheduled testgaps (interval: 1200s, first run in 480s)
+[2026-10-03T07:43:23.526Z] [INFO] Scheduled backup (interval: 86400s, first run in 600s)
+[2026-10-03T07:43:23.526Z] [INFO] Scheduled harness (interval: 21600s, first run in 720s)
+[2026-10-03T07:43:23.526Z] [INFO] Lifecycle monitor active (workspace-removal, ttl=43200s, idle=1800s)
+[2026-10-03T07:43:23.536Z] [INFO] Daemon started (PID: 27612, CPUs: 12, workers: 7, maxCpuLoad: 9.600000000000001, minFreeMemoryPercent: 10%)
+[2026-10-03T07:43:23.548Z] [INFO] Starting worker: map (1/2 concurrent)
+[2026-10-03T07:43:23.548Z] [INFO] Worker map completed in 11ms
+[2026-10-03T07:45:23.544Z] [INFO] Starting worker: audit (1/2 concurrent)
+[2026-10-03T07:45:23.545Z] [INFO] Worker audit completed in 14ms
+[2026-10-03T07:47:23.544Z] [INFO] Starting worker: optimize (1/2 concurrent)
+[2026-10-03T07:47:23.545Z] [INFO] Worker optimize completed in 14ms
+[2026-10-03T07:49:23.545Z] [INFO] Starting worker: consolidate (1/2 concurrent)
+[2026-10-03T07:49:23.598Z] [INFO] Worker consolidate completed in 67ms
+[2026-10-03T07:51:23.544Z] [INFO] Starting worker: testgaps (1/2 concurrent)
+[2026-10-03T07:51:23.545Z] [INFO] Worker testgaps completed in 15ms
+[2026-10-03T07:53:23.543Z] [INFO] Starting worker: backup (1/2 concurrent)
+[2026-10-03T07:53:23.566Z] [INFO] Worker backup completed in 36ms
+[2026-10-03T07:55:23.542Z] [INFO] Starting worker: harness (1/2 concurrent)
+[2026-10-03T07:55:23.546Z] [INFO] Worker harness completed in 18ms
+[2026-10-03T07:55:23.569Z] [INFO] Starting worker: audit (1/2 concurrent)
+[2026-10-03T07:55:23.571Z] [INFO] Worker audit completed in 14ms
+[2026-10-03T07:58:23.572Z] [INFO] Starting worker: map (1/2 concurrent)
+[2026-10-03T07:58:23.573Z] [INFO] Worker map completed in 11ms
+[2026-10-03T08:02:23.573Z] [INFO] Starting worker: optimize (1/2 concurrent)
+[2026-10-03T08:02:23.573Z] [INFO] Worker optimize completed in 13ms
+[2026-10-03T08:05:23.590Z] [INFO] Worker audit deferred: Memory too low: 10.0% free
+[2026-10-03T08:11:23.570Z] [INFO] Starting worker: testgaps (1/2 concurrent)
+[2026-10-03T08:11:23.574Z] [INFO] Worker testgaps completed in 15ms
+[2026-10-03T08:11:23.597Z] [INFO] Starting worker: audit (1/2 concurrent)
+[2026-10-03T08:11:23.597Z] [INFO] Worker audit completed in 12ms
+[2026-10-03T08:13:23.585Z] [INFO] Worker map deferred: Memory too low: 6.9% free
+[2026-10-03T08:15:23.597Z] [INFO] Worker audit deferred: Memory too low: 4.2% free
+[2026-10-03T08:17:23.593Z] [INFO] Worker optimize deferred: CPU load too high: 10.90
+[2026-10-03T08:19:23.630Z] [INFO] Starting worker: consolidate (1/2 concurrent)
+[2026-10-03T08:19:23.653Z] [INFO] Worker consolidate completed in 37ms
+[2026-10-03T08:19:23.676Z] [INFO] Starting worker: map (1/2 concurrent)
+[2026-10-03T08:19:23.677Z] [INFO] Worker map completed in 13ms
+[2026-10-03T08:19:23.699Z] [INFO] Starting worker: audit (1/2 concurrent)
+[2026-10-03T08:19:23.711Z] [INFO] Starting worker: optimize (2/2 concurrent)
+[2026-10-03T08:19:23.712Z] [INFO] Worker audit completed in 24ms
+[2026-10-03T08:19:23.722Z] [INFO] Worker optimize completed in 22ms
+[2026-10-03T08:25:23.616Z] [INFO] Starting worker: audit (1/2 concurrent)
+[2026-10-03T08:25:23.617Z] [INFO] Worker audit completed in 16ms
+[2026-10-03T08:28:23.599Z] [INFO] Starting worker: map (1/2 concurrent)
+[2026-10-03T08:28:23.600Z] [INFO] Worker map completed in 12ms
+[2026-10-03T08:31:23.590Z] [INFO] Worker testgaps deferred: Memory too low: 7.0% free
+[2026-10-03T08:32:44.534Z] [INFO] Worker optimize deferred: CPU load too high: 61.21
+[2026-10-03T08:35:23.651Z] [INFO] Starting worker: audit (1/2 concurrent)
+[2026-10-03T08:35:23.653Z] [INFO] Worker audit completed in 18ms
+[2026-10-03T08:35:23.680Z] [INFO] Starting worker: testgaps (1/2 concurrent)
+[2026-10-03T08:35:23.682Z] [INFO] Worker testgaps completed in 15ms
+[2026-10-03T08:35:23.705Z] [INFO] Starting worker: optimize (1/2 concurrent)
+[2026-10-03T08:35:23.706Z] [INFO] Worker optimize completed in 13ms
