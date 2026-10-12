@@ -13,3 +13,7 @@ ruvector.db
 
 .env
 api/node_modules/
+
+# deploy/.env holds server secrets
+deploy/.env
+deploy/.bad-images
