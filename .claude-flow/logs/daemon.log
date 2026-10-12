@@ -213,3 +213,11 @@
 [2026-10-12T06:36:59.454Z] [INFO] Worker backup deferred: Memory too low: 10.0% free
 [2026-10-12T06:38:59.455Z] [INFO] Worker harness deferred: Memory too low: 9.5% free
 [2026-10-12T06:38:59.481Z] [INFO] Worker audit deferred: Memory too low: 9.5% free
+[2026-10-12T06:41:59.486Z] [INFO] Starting worker: map (1/2 concurrent)
+[2026-10-12T06:41:59.486Z] [INFO] Worker map completed in 11ms
+[2026-10-12T06:41:59.507Z] [INFO] Starting worker: backup (1/2 concurrent)
+[2026-10-12T06:41:59.555Z] [INFO] Worker backup completed in 58ms
+[2026-10-12T06:41:59.575Z] [INFO] Starting worker: harness (1/2 concurrent)
+[2026-10-12T06:41:59.586Z] [INFO] Starting worker: audit (2/2 concurrent)
+[2026-10-12T06:41:59.587Z] [INFO] Worker audit completed in 11ms
+[2026-10-12T06:41:59.599Z] [INFO] Worker harness completed in 34ms
