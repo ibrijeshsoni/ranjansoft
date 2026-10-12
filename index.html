@@ -52,6 +52,7 @@
       --status-done:     #4ADE80;
       --status-done-bg:  rgba(74,222,128,0.12);
       --status-done-bdr: rgba(74,222,128,0.30);
+      --danger:          #F87171;
       --status-hold:     #93A9C9;
       --status-hold-bg:  rgba(147,169,201,0.14);
       --status-hold-bdr: rgba(147,169,201,0.32);
@@ -92,6 +93,7 @@
       --status-done:     #15803D;
       --status-done-bg:  rgba(21,128,61,0.08);
       --status-done-bdr: rgba(21,128,61,0.28);
+      --danger:          #B42318;
       --status-hold:     #4B6385;
       --status-hold-bg:  rgba(75,99,133,0.08);
       --status-hold-bdr: rgba(75,99,133,0.28);
@@ -299,7 +301,7 @@
       background-size: 24px 24px; background-position: -1px -1px;
       padding: 28px 28px 32px;
     }
-    .dims { display: grid; grid-template-columns: 3fr 2fr; gap: 0; margin-bottom: 28px; }
+    .dims { display: grid; grid-template-columns: 1fr 2fr; gap: 0; margin-bottom: 28px; }
     .dim {
       position: relative; padding: 0 12px; text-align: center;
       font-size: .9rem; font-weight: 700; font-stretch: var(--w-label); color: var(--accent);
@@ -315,14 +317,15 @@
       animation: fadeIn .3s 1.1s both;
     }
     .chain {
-      list-style: none; display: grid; grid-template-columns: repeat(5,1fr); position: relative;
+      list-style: none; display: grid; grid-template-columns: repeat(3,1fr); position: relative;
     }
     .chain::before {           /* the cable running through every node */
-      content: ''; position: absolute; left: 10%; right: 10%; top: 31px; height: 0;
+      content: ''; position: absolute; left: calc(100% / 6); right: calc(100% / 6); top: 31px; height: 0;
       border-top: 2px dashed var(--line); opacity: .7;
       transform-origin: left; animation: cableDraw 1.2s .2s cubic-bezier(.3,.6,.2,1) both;
     }
     .chain li { position: relative; padding: 0 12px; text-align: center; }
+    .chain li[hidden] { display: none; }
     .chain-node {
       width: 64px; height: 64px; margin: 0 auto 18px; position: relative; z-index: 1;
       display: flex; align-items: center; justify-content: center;
@@ -609,6 +612,15 @@
     .fi-input::placeholder, .fi-ta::placeholder { color: var(--text-muted); }
     .fi-ta  { resize: vertical; min-height: 128px; }
     .fi-sel option { background: var(--bg-card); }
+    .fi-input[aria-invalid="true"], .fi-ta[aria-invalid="true"], .fi-sel[aria-invalid="true"] { border-color: var(--danger); }
+    .fi-err  { display: block; margin-top: 6px; font-size: .85rem; color: var(--danger); }
+    .fi-err:empty { display: none; }
+    .hp-field { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+    .form-status { margin-top: 14px; font-size: .95rem; line-height: 1.5; }
+    .form-status:empty { display: none; }
+    .form-status.ok  { color: var(--status-done); }
+    .form-status.err { color: var(--danger); }
+    .contact-form button[disabled] { opacity: .65; cursor: progress; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
     /* =========================================
@@ -803,12 +815,12 @@
             <strong>Laptops &amp; desktops</strong>
             <small>Repairs, upgrades and yearly AMC</small>
           </li>
-          <li>
+          <li hidden><!-- hidden for now; restore: remove hidden on both, set .dims 3fr 2fr, .chain repeat(5,1fr), cable left/right 10% -->
             <div class="chain-node"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="4" y="13" width="24" height="9" rx="1"/><path d="M8 17.5h2M12 17.5h2M16 17.5h2"/><circle cx="23" cy="17.5" r="1"/><path d="M11 9a7 7 0 0 1 10 0M13.5 11.5a3.5 3.5 0 0 1 5 0"/></svg></div>
             <strong>Networks</strong>
             <small>Wi-Fi, cabling and office setup</small>
           </li>
-          <li>
+          <li hidden>
             <div class="chain-node"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="7" y="4" width="18" height="7" rx="1"/><rect x="7" y="12.5" width="18" height="7" rx="1"/><rect x="7" y="21" width="18" height="7" rx="1"/><path d="M11 7.5h4M11 16h4M11 24.5h4"/><circle cx="21" cy="7.5" r=".8" fill="currentColor"/><circle cx="21" cy="16" r=".8" fill="currentColor"/><circle cx="21" cy="24.5" r=".8" fill="currentColor"/></svg></div>
             <strong>Servers &amp; hosting</strong>
             <small>VPS, dedicated servers, UPS</small>
@@ -1939,17 +1951,18 @@
         </div>
 
         <!-- FORM -->
-        <div class="contact-form">
+        <form class="contact-form" id="contact-form" data-api="" novalidate><!-- data-api: API base URL when the page is not served by the podman stack, e.g. https://api.ranjansoft.com; empty = same origin -->
           <div class="s-label" style="margin-bottom:22px">Send a Message</div>
           <div class="form-row">
-            <div class="fg"><label>First Name</label><input type="text" class="fi-input" placeholder="Rohan"></div>
-            <div class="fg"><label>Last Name</label><input type="text" class="fi-input" placeholder="Sharma"></div>
+            <div class="fg"><label for="cf-firstName">First Name</label><input id="cf-firstName" name="firstName" type="text" class="fi-input" placeholder="Rohan" autocomplete="given-name" maxlength="80" required><span class="fi-err" data-err="firstName"></span></div>
+            <div class="fg"><label for="cf-lastName">Last Name</label><input id="cf-lastName" name="lastName" type="text" class="fi-input" placeholder="Sharma" autocomplete="family-name" maxlength="80"><span class="fi-err" data-err="lastName"></span></div>
           </div>
-          <div class="fg"><label>Work Email</label><input type="email" class="fi-input" placeholder="rohan@company.com"></div>
-          <div class="fg"><label>Company Name</label><input type="text" class="fi-input" placeholder="Your Company Pvt. Ltd."></div>
+          <div class="fg"><label for="cf-email">Work Email</label><input id="cf-email" name="email" type="email" class="fi-input" placeholder="rohan@company.com" autocomplete="email" maxlength="254" required><span class="fi-err" data-err="email"></span></div>
+          <div class="fg"><label for="cf-company">Company Name</label><input id="cf-company" name="company" type="text" class="fi-input" placeholder="Your Company Pvt. Ltd." autocomplete="organization" maxlength="160"><span class="fi-err" data-err="company"></span></div>
+          <div class="hp-field" aria-hidden="true"><label for="cf-website">Website</label><input id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
           <div class="fg">
-            <label>Service of Interest</label>
-            <select class="fi-sel">
+            <label for="cf-service">Service of Interest</label>
+            <select id="cf-service" name="service" class="fi-sel" required>
               <option value="" disabled selected>Select a service...</option>
               <option>Cloud Architecture &amp; Migration</option>
               <option>Cybersecurity &amp; Compliance</option>
@@ -1960,13 +1973,16 @@
               <option>IT Strategy Consulting</option>
               <option>Other</option>
             </select>
+            <span class="fi-err" data-err="service"></span>
           </div>
           <div class="fg">
-            <label>Tell us about your project</label>
-            <textarea class="fi-ta" placeholder="Describe your current challenges and what you're hoping to achieve..."></textarea>
+            <label for="cf-message">Tell us about your project</label>
+            <textarea id="cf-message" name="message" class="fi-ta" placeholder="Describe your current challenges and what you're hoping to achieve..." maxlength="5000" required></textarea>
+            <span class="fi-err" data-err="message"></span>
           </div>
-          <button class="btn-primary" style="width:100%;justify-content:center">Send Message</button>
-        </div>
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center">Send Message</button>
+          <p class="form-status" id="cf-status" role="status" aria-live="polite"></p>
+        </form>
 
       </div>
     </div>
@@ -2156,6 +2172,65 @@
     if (i !== defaultIdx && grid) grid.style.display = 'none';
   });
   cont.insertBefore(bar, cont.firstChild);
+})();
+</script>
+<script>
+// Contact form: POSTs to <data-api>/api/contact (nginx proxies it to the api container, which saves to MongoDB).
+(function(){
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+  var status = document.getElementById('cf-status');
+  var btn = form.querySelector('button[type="submit"]');
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  function setStatus(text, kind){ status.textContent = text; status.className = 'form-status' + (kind ? ' ' + kind : ''); }
+  function showErrors(errors){
+    form.querySelectorAll('[data-err]').forEach(function(el){
+      var name = el.getAttribute('data-err');
+      var field = form.elements[name];
+      el.textContent = errors[name] || '';
+      if (field) {
+        if (errors[name]) { field.setAttribute('aria-invalid', 'true'); field.setAttribute('aria-describedby', el.id || (el.id = 'cf-err-' + name)); }
+        else field.removeAttribute('aria-invalid');
+      }
+    });
+    var first = Object.keys(errors)[0];
+    if (first && form.elements[first]) form.elements[first].focus();
+  }
+  function check(data){
+    var errors = {};
+    ['firstName','email','service','message'].forEach(function(k){ if (!data[k]) errors[k] = 'This field is required.'; });
+    if (data.email && !EMAIL_RE.test(data.email)) errors.email = 'Enter a valid email address.';
+    return errors;
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var data = {};
+    ['firstName','lastName','email','company','service','message','website'].forEach(function(k){
+      data[k] = (form.elements[k].value || '').trim();
+    });
+    var errors = check(data);
+    showErrors(errors);
+    if (Object.keys(errors).length) { setStatus('Check the highlighted fields.', 'err'); return; }
+
+    btn.disabled = true; btn.textContent = 'Sending…'; setStatus('');
+    var api = (form.getAttribute('data-api') || '').replace(/\/$/, '');
+    fetch(api + '/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+      .then(function(res){ return res.json().catch(function(){ return {}; }).then(function(body){ return { res: res, body: body }; }); })
+      .then(function(r){
+        if (r.res.ok) {
+          form.reset();
+          setStatus('Thanks, your message has been sent. We will reply within one business day.', 'ok');
+        } else if (r.body.errors) {
+          showErrors(r.body.errors); setStatus('Check the highlighted fields.', 'err');
+        } else {
+          setStatus(r.body.error || 'Your message could not be sent. Email us at hr.ranjansoft@gmail.com instead.', 'err');
+        }
+      })
+      .catch(function(){ setStatus('Your message could not be sent. Check your connection, or email us at hr.ranjansoft@gmail.com.', 'err'); })
+      .then(function(){ btn.disabled = false; btn.textContent = 'Send Message'; });
+  });
 })();
 </script>
 </body>

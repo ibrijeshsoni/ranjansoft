@@ -12,3 +12,6 @@ deployment-ducument.pdf
 ruvector.db
 .claude-flow/
 .swarm/
+.env
+.env.example
+api/

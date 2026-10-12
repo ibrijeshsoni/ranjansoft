@@ -10,3 +10,6 @@ deployment-ducument.pdf
 ruvector.db
 .swarm/
 .claude-flow/
+
+.env
+api/node_modules/

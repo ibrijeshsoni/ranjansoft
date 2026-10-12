@@ -1,0 +1,103 @@
+# CI/CD for every commit:
+#   check        - syntax-checks the contact API and builds both container images (all branches and PRs)
+#   deploy-pages - publishes only index.html to GitHub Pages (pushes to master only, after check passes)
+#
+# One-time setup in the repo on GitHub:
+#   Settings -> Pages -> Build and deployment -> Source: "GitHub Actions"
+#   Settings -> Secrets and variables -> Actions -> Variables -> CONTACT_API_URL
+#     = public HTTPS base URL of the contact API (e.g. https://api.ranjansoft.com).
+#     It is written into the form's data-api attribute; leave unset and the form
+#     on GitHub Pages has no API to post to.
+
+name: CI / Deploy
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: api/package-lock.json
+
+      - name: Install and syntax-check the API
+        working-directory: api
+        run: |
+          npm ci --omit=dev
+          node --check server.js
+
+      - name: Check the form's services match the API's list
+        run: |
+          python3 - <<'PY'
+          import html, re, sys
+          page = open('index.html', encoding='utf-8').read()
+          form = page[page.index('id="cf-service"'):]
+          form = form[:form.index('</select>')]
+          options = [html.unescape(o) for o in re.findall(r'<option>([^<]+)</option>', form)]
+          api = open('api/server.js', encoding='utf-8').read()
+          block = api[api.index('const SERVICES = ['):]
+          services = re.findall(r"'([^']+)'", block[:block.index('];')])
+          if options != services:
+              sys.exit(f'Form options and API SERVICES differ:\n  form: {options}\n  api:  {services}')
+          print(f'{len(options)} services match')
+          PY
+
+      - name: Build web image
+        run: docker build -t ranjansoft-web .
+
+      - name: Build API image
+        run: docker build -t ranjansoft-api ./api
+
+  deploy-pages:
+    needs: check
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Assemble site (index.html only)
+        env:
+          CONTACT_API_URL: ${{ vars.CONTACT_API_URL }}
+        run: |
+          mkdir _site
+          cp index.html _site/
+          if [ -n "$CONTACT_API_URL" ]; then
+            case "$CONTACT_API_URL" in
+              https://*) ;;
+              *) echo "::error::CONTACT_API_URL must start with https:// (GitHub Pages is HTTPS-only)"; exit 1 ;;
+            esac
+            python3 -c 'import os,sys; p="_site/index.html"; s=open(p,encoding="utf-8").read(); a="data-api=\"\""; assert s.count(a)==1, "data-api attribute not found"; open(p,"w",encoding="utf-8").write(s.replace(a,"data-api=\""+os.environ["CONTACT_API_URL"].rstrip("/")+"\""))'
+            echo "Contact form will post to $CONTACT_API_URL/api/contact"
+          else
+            echo "::warning::CONTACT_API_URL is not set; the contact form on GitHub Pages cannot submit."
+          fi
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -10,8 +10,10 @@ RUN rm -rf /usr/share/nginx/html/*
 # Copy the static site into the Nginx web root
 COPY index.html /usr/share/nginx/html/index.html
 
-# Use the official Nginx configuration, which serves files from
-# /usr/share/nginx/html on port 80.
+# Site config: serves the SPA and proxies /api/ to the contact API
+COPY site.conf /etc/nginx/conf.d/default.conf
+
+# Serves on port 80.
 EXPOSE 80
 
 # Nginx runs in the foreground
