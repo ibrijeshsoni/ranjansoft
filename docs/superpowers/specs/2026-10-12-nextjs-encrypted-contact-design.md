@@ -148,12 +148,12 @@ GitHub Actions needs only these repo variables: `NEXT_PUBLIC_CONTACT_API_URL` (f
 
 - **GitHub Pages:** the repo's Pages source is set to "GitHub Actions". On every push to `master` that passes checks, CI builds `apps/web` with `BUILD_TARGET=pages` and deploys `apps/web/out`.
 - **stock-market-server:** `podman-compose.yml` defines two containers:
-  - `ranjansoft-web-api`, listening on `127.0.0.1:3000`
+  - `ranjansoft-web-api`, listening on `127.0.0.1:5500` (the app itself also runs on port 5500 inside the container, `PORT=5500`)
   - `ranjansoft-admin`, listening on `127.0.0.1:3100`
 
   Tailscale publishes them:
   ```
-  tailscale funnel --bg --https=8443 http://127.0.0.1:3000   # public API
+  tailscale funnel --bg --https=8443 http://127.0.0.1:5500   # public API
   tailscale serve  --bg --https=443  http://127.0.0.1:3100   # admin, tailnet only
   ```
   Funnel must be allowed for this node in the tailnet policy file (the `funnel` node attribute). The Funnel URL exposes the whole web-api container, so the API endpoints and the page copy are both public; the admin is never funnelled.
